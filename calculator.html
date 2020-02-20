@@ -4,9 +4,7 @@
     <title>calculator</title>
   </head>
   <body>
-    <p id="o">100000000!=infinity
-    </p>
-    <p>yay!!!!!!!!!!!!!!!!!!!!
+    <p id="o">This is the calculator:
     </p>
     <form id="thing" action="javascript:alert('tutu')">
       <label for="firstn">first number</label><br>
@@ -15,6 +13,12 @@
       <input type="text" id="lastn" name="lastn" value=""><br><br>
       <label for="op">operation</label><br>
       <input type="text" id="op" name="op" value=""><br><br>
+      <select id="op" name="operation">
+      <option value="">+</option>
+      <option value="">*</option>
+      <option value="">gcd</option>
+      <option value="">-</option>
+      </select>
     </form>
     <button onclick="myFunction()">Try it</button>
     <p id="output">
@@ -77,7 +81,7 @@
           return gcd(n, m);
         }else if (o === "*"){
           return times(n, m);
-        }else if (o == "+") {
+        }else if (o === "+") {
           return add(n, m)
         }else {
           return "invalid entry";
