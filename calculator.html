@@ -19,7 +19,7 @@
       <option value="!">factorial</option>
       <option value="*">*</option>
       <option value="gcd">gcd</option>
-      <option value="/">\</option>
+      <option value="%">%</option>
       <option value="-">-</option>
       </select><br><br>
     </form>
@@ -109,8 +109,8 @@
           return times(n, m);
         }else if (o === "+") {
           return add(n, m)
-        }else if (o === "/") {
-          return divide(n, m)
+        }else if (o === "%") {
+          return remainder(n, m)
         }else if (o === "!") {
           return factorial(n)
         }else {
