@@ -91,14 +91,11 @@
           return n * factorial(n - 1);
         }
       }
-      function divide(n,m){
-        if (m === 0) {
-          return "undefined";
-        } else if (m === 1){
+      function remainder(n,m){
+        if (n < m) {
           return n;
         } else{
-          var g = gcd(n,m);
-          return divide(n / g, m / g);
+          return remainder(n, m - n);
         }
       }
       function count(n, o, m) {
