@@ -29,15 +29,16 @@
     <p id="output">
     </p>
     <script>
-      function gcd(m, n) {
-          if (n > m) {
-            return gcd(n, m);
-          }
-          var r = m % n;
-          if (r === 0) {
-            return n;
-          }
-          return gcd(n, r);
+      function add(n, m) {
+        if (n === 0) {
+          return m
+        }else if (m === 0) {
+          return n
+        }else {
+          m = m - 1
+          n = n + 1
+        }
+        return add(n, m)
       }
 
       function subtract(n, m) {
@@ -58,28 +59,27 @@
         } else if (m === 1){
           return n;
         } else{
-          return n + times(n, m - 1);
+          return add(n, times(n, m - 1));
         }
+      }
+
+      function gcd(m, n) {
+          if (n > m) {
+            return gcd(n, m);
+          }
+          var r = m % n;
+          if (r === 0) {
+            return n;
+          }
+          return gcd(n, r);
       }
 
       function tnumber(n) {
         if (n === 1)
-          return 1
+          return 1;
         else if (n < 0)
-          return "invalid entry"
-        return n + tnumber(n - 1)
-      }
-
-      function add(n, m) {
-        if (n === 0) {
-          return m
-        }else if (m === 0) {
-          return n
-        }else {
-          m = m - 1
-          n = n + 1
-        }
-        return add(n, m)
+          return "invalid entry";
+        return add(n, tnumber(n - 1));
       }
 
       function factorial(n){
