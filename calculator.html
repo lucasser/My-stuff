@@ -30,6 +30,7 @@
     </p>
     <script>
       function add(n, m) {
+        console.log(n,m);
         if (n === 0) {
           return m
         }else if (m === 0) {
@@ -42,6 +43,7 @@
       }
 
       function subtract(n, m) {
+        console.log(n,m);
         if (n === 0){
           return m;
         }else if (m === 0){
@@ -54,6 +56,7 @@
       }
 
       function times(n, m) {
+        console.log(n,m);
         if (m === 0) {
           return 0;
         } else if (m === 1){
@@ -64,17 +67,19 @@
       }
 
       function gcd(m, n) {
-          if (n > m) {
-            return gcd(n, m);
-          }
-          var r = m % n;
-          if (r === 0) {
-            return n;
-          }
-          return gcd(n, r);
+        console.log(n,m);
+        if (n > m) {
+          return gcd(n, m);
+        }
+        var r = m % n;
+        if (r === 0) {
+          return n;
+        }
+        return gcd(n, r);
       }
 
       function tnumber(n) {
+        console.log(n);
         if (n === 1)
           return 1;
         else if (n < 0)
@@ -83,6 +88,7 @@
       }
 
       function factorial(n){
+        console.log(n);
         if (n === 1){
           return 1;
         } else if(n === 0){
@@ -92,6 +98,7 @@
         }
       }
       function remainder(n,m){
+        console.log(n,m);
         if (n < m) {
           return n;
         } else{
