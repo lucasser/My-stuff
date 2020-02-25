@@ -6,6 +6,8 @@
   <body>
     <p id="o">This is the calculator:
     </p>
+    <p>the function is: </p>
+    <img src = "https://i.pinimg.com/originals/8b/44/eb/8b44ebb3a89bbe52f9dbd02f772780a8.jpg" width="100">
     <form id="thing" action="javascript:alert('tutu')">
       <label for="firstn">first number:</label><br>
       <input type="text" id="firstn" name="firstn" value=""><br>
@@ -21,9 +23,10 @@
       <option value="gcd">gcd</option>
       <option value="%">%</option>
       <option value="-">-</option>
+      <option value="^">^</option>
       </select><br><br>
     </form>
-    <button onclick="myFunction()">Try it</button>
+    <button onclick="convert()">Try it</button>
     <p id="me">The answer will be here:
     </p>
     <p id="output">
@@ -63,6 +66,13 @@
         }
       }
 
+      function power(n,m){
+        if (m === 1){
+          return n;
+        } else {
+          return times(n,power(n,m - 1));
+        }
+      }
       function gcd(m, n) {
         if (n > m) {
           return gcd(n, m);
@@ -113,11 +123,13 @@
           return remainder(n, m)
         }else if (o === "!") {
           return factorial(n)
+        }else if (o === "^") {
+          return power(n,m)
         }else {
           return "invalid entry";
         }
       }
-      function myFunction() {
+      function convert() {
         //alert("myFunction")
         var x = document.getElementById("thing");
         var n = parseInt(x.elements[0].value);
