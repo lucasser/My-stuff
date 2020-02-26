@@ -73,10 +73,10 @@
           return times(n,power(n,m - 1));
         }
       }
-      
+
       function remainder(n,m){
         while (n > m){
-          m += n;
+          n -= m;
         }
         return (n);
       }
