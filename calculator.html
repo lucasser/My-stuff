@@ -85,7 +85,7 @@
         if (n > m) {
           return gcd(n, m);
         }
-        var r = m % n;
+        var r = remainder(n, m);
         if (r === 0) {
           return n;
         }
