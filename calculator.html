@@ -73,6 +73,14 @@
           return times(n,power(n,m - 1));
         }
       }
+      
+      function remainder(n,m){
+        while (n > m){
+          m += n;
+        }
+        return (n);
+      }
+
       function gcd(m, n) {
         if (n > m) {
           return gcd(n, m);
@@ -101,13 +109,7 @@
           return times(n, factorial(n - 1));
         }
       }
-      function remainder(n,m){
-        if (n < m) {
-          return n;
-        } else{
-          return remainder(n, m - n);
-        }
-      }
+
       function count(n, o, m) {
         if (o === "-"){
           return subtract(n, m);
