@@ -4,21 +4,21 @@
     <title>calculator</title>
     <style media="screen">
       body {background:yellow;}
-      #o {color:black;}
+      #o {color:purple;}
+      button {color:green;}
     </style>
   </head>
   <body>
     <p id="o">This is the calculator:
     </p>
-    <p>the function is: </p>
+    <!--
+    <p id="">the function is: </p>
+    -->
     <img src = "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png" width="100">
     <form id="thing" action="javascript:alert('tutu')">
-      <label for="firstn">first number:</label><br>
-      <input type="text" id="firstn" name="firstn" value=""><br>
-      <label for="lastn">second number:</label><br>
-      <input type="text" id="lastn" name="lastn" value=""><br><br>
-      <label for="op">operation:</label><br>
-      <select id="op" name="operation">
+      first number:<input type="text" id="firstn" name="firstn" value=""><br><br>
+      second number:<input type="text" id="lastn" name="lastn" value=""><br><br>
+      operation:<select id="op" name="operation">
         <option value=""></option>
         <option value="+">+</option>
         <option value="tnum">triangular number</option>
@@ -136,7 +136,6 @@
         }
       }
       function convert() {
-        //alert("myFunction")
         var x = document.getElementById("thing");
         var n = parseInt(x.elements[0].value);
         var m = parseInt(x.elements[1].value);
