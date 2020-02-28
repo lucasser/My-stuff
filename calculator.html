@@ -2,12 +2,16 @@
 <html>
   <head>
     <title>calculator</title>
+    <style media="screen">
+      body {background:yellow;}
+      #o {color:black;}
+    </style>
   </head>
   <body>
     <p id="o">This is the calculator:
     </p>
     <p>the function is: </p>
-    <img src = "https://i.pinimg.com/originals/8b/44/eb/8b44ebb3a89bbe52f9dbd02f772780a8.jpg" width="100">
+    <img src = "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png" width="100">
     <form id="thing" action="javascript:alert('tutu')">
       <label for="firstn">first number:</label><br>
       <input type="text" id="firstn" name="firstn" value=""><br>
@@ -15,15 +19,15 @@
       <input type="text" id="lastn" name="lastn" value=""><br><br>
       <label for="op">operation:</label><br>
       <select id="op" name="operation">
-      <option value=""></option>
-      <option value="+">+</option>
-      <option value="tnum">triangular number</option>
-      <option value="!">factorial</option>
-      <option value="*">*</option>
-      <option value="gcd">gcd</option>
-      <option value="%">%</option>
-      <option value="-">-</option>
-      <option value="^">^</option>
+        <option value=""></option>
+        <option value="+">+</option>
+        <option value="tnum">triangular number</option>
+        <option value="!">factorial</option>
+        <option value="*">*</option>
+        <option value="gcd">gcd</option>
+        <option value="%">%</option>
+        <option value="-">-</option>
+        <option value="^">^</option>
       </select><br><br>
     </form>
     <button onclick="convert()">Try it</button>
@@ -75,7 +79,7 @@
       }
 
       function remainder(n,m){
-        while (n > m){
+        while (n >= m){
           n -= m;
         }
         return (n);
@@ -85,7 +89,7 @@
         if (n > m) {
           return gcd(n, m);
         }
-        var r = remainder(n, m);
+        var r = m % n;
         if (r === 0) {
           return n;
         }
