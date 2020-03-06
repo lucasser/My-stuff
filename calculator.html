@@ -62,6 +62,7 @@
       second number: <input type="text" id="lastn" name="lastn" value=""><br><br>
       operation:     <select id="op" name="operation">
         <option value=""></option>
+        <option value="/">/</option>
         <option value="+">+</option>
         <option value="tnum">triangular number</option>
         <option value="!">factorial</option>
@@ -157,6 +158,21 @@
         }
       }
 
+      function divide(n,m){
+        if (m === 0){
+          return "invalid entry";
+        } else if (m === 1){
+          return n;
+        } else {
+          var c = 0;
+          while (n >= m){
+            n -= m;
+            c ++;
+          }
+        return c + "R" + n;
+        }
+      }
+
       function count(n, o, m) {
         if (o === "-"){
           return subtract(n, m);
@@ -174,6 +190,8 @@
           return factorial(n)
         }else if (o === "^") {
           return power(n,m)
+        }else if (o === "/") {
+          return divide(n,m)
         }else {
           return "invalid entry";
         }
