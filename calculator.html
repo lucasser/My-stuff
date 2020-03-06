@@ -4,8 +4,50 @@
     <title>calculator</title>
     <style media="screen">
       body {background:yellow;}
-      #o {color:purple;}
-      button {color:green;}
+      #o {
+        color:purple;
+        top: 20%;
+      }
+      button {
+        color:purple;
+        width:60px;
+        height:30px;
+        position: fixed;
+        top: 65%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      #output {color:green;
+        top: 75%;
+      }
+      #me {color:green;
+        top: 70%;
+      }
+      p{
+        width:300px;
+        height:300px;
+        position: fixed;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      form {
+        width:300px;
+        height:300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      img {
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
     </style>
   </head>
   <body>
@@ -16,9 +58,9 @@
     -->
     <img src = "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png" width="100">
     <form id="thing" action="javascript:alert('tutu')">
-      first number:<input type="text" id="firstn" name="firstn" value=""><br><br>
-      second number:<input type="text" id="lastn" name="lastn" value=""><br><br>
-      operation:<select id="op" name="operation">
+      first number:  <input type="text" id="firstn" name="firstn" value=""><br><br>
+      second number: <input type="text" id="lastn" name="lastn" value=""><br><br>
+      operation:     <select id="op" name="operation">
         <option value=""></option>
         <option value="+">+</option>
         <option value="tnum">triangular number</option>
@@ -35,6 +77,7 @@
     </p>
     <p id="output">
     </p>
+
     <script>
       function add(n, m) {
         if (n === 0) {
