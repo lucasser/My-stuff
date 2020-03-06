@@ -174,8 +174,9 @@
       }
 
       function count(n, o, m) {
-        if (n < 0 || m < 0)
-        else if (o === "-"){
+        if (n < 0 || m < 0){
+          return "enter nonnegative integer";
+        }else if (o === "-"){
           return subtract(n, m);
         }else if (o === "gcd"){
           return gcd(n, m);
