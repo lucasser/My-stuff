@@ -8,8 +8,7 @@
         color:purple;
         top: 20%;
       }
-      button {
-        color:purple;
+      #bt {
         width:60px;
         height:30px;
         position: fixed;
@@ -31,6 +30,21 @@
         left: 50%;
         margin-top: -100px;
         margin-left: -100px;
+      }
+      .err{
+        color: red;
+      }
+      #nErr {
+        left: 78%;
+        top: 50%;
+      }
+      #mErr {
+        left: 78%;
+        top: 55%;
+      }
+      #oErr {
+        left: 78%;
+        top: 60%;
       }
       form {
         width:300px;
@@ -58,9 +72,9 @@
     -->
     <img src = "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png" width="100">
     <form id="thing" action="javascript:alert('tutu')">
-      first number:  <input type="number" id="firstn" name="firstn" value=""><br><br>
-      second number: <input type="number" id="lastn" name="lastn" value=""><br><br>
-      operation:     <select id="op" name="operation">
+      first number:  <input type="number" onkeyup="manage(this)" id="firstn" name="firstn" value=""><br><br>
+      second number: <input type="number" onkeyup="manage(this)" id="lastn" name="lastn" value=""><br><br>
+      operation:     <select id="op" onchange="manage(this)" name="operation">
         <option value=""></option>
         <option value="/">/</option>
         <option value="+">+</option>
@@ -73,13 +87,39 @@
         <option value="^">^</option>
       </select><br><br>
     </form>
-    <button onclick="convert()">Try it</button>
-    <p id="me">The answer will be here:
-    </p>
-    <p id="output">
-    </p>
+    <input type="submit" id="bt" onclick="convert()" value="try it" disabled></input>
+    <p id="me">The answer will be here:</p>
+    <p id="output"></p>
+    <p class="err" id="nErr"></p>
+    <p class="err" id="mErr"></p>
+    <p class="err" id="oErr"></p>
 
     <script>
+      function manage(n1,n2,op) {
+        var x = document.getElementById("thing");
+        var valid = true;
+
+        var n = parseInt(x.elements[0].value);
+        if (Number.isNaN(n) || n < 0) {
+          valid = false;
+          document.getElementById("nErr").innerHTML = "Enter non-negative integer.";
+        }
+
+        var m = parseInt(x.elements[1].value);
+        if (Number.isNaN(m) || m < 0) {
+          valid = false;
+          document.getElementById("mErr").innerHTML = "Enter non-negative integer.";
+        }
+
+        var o = x.elements[2].value;
+        if (o === "") {
+          valid = false;
+          document.getElementById("oErr").innerHTML = "Enter non-negative integer.";
+        }
+
+        var bt = document.getElementById('bt');
+        bt.disabled = ! valid;
+      }
       function add(n, m) {
         if (n === 0) {
           return m
@@ -174,9 +214,7 @@
       }
 
       function count(n, o, m) {
-        if (n < 0 || m < 0){
-          return "enter nonnegative integer";
-        }else if (o === "-"){
+        if (o === "-"){
           return subtract(n, m);
         }else if (o === "gcd"){
           return gcd(n, m);
@@ -194,8 +232,6 @@
           return power(n,m)
         }else if (o === "/") {
           return divide(n,m)
-        }else {
-          return "invalid entry";
         }
       }
       function convert() {
