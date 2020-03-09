@@ -12,16 +12,16 @@
         width:60px;
         height:30px;
         position: fixed;
-        top: 65%;
+        top: 70%;
         left: 50%;
         margin-top: -100px;
         margin-left: -100px;
       }
       #output {color:green;
-        top: 75%;
+        top: 80%;
       }
       #me {color:green;
-        top: 70%;
+        top: 75%;
       }
       p{
         width:300px;
@@ -33,19 +33,8 @@
       }
       .err{
         color: red;
-        align: right;
-      }
-      #nErr {
-        left: 78%;
-        top: 50%;
-      }
-      #mErr {
-        left: 78%;
-        top: 55%;
-      }
-      #oErr {
-        left: 78%;
-        top: 60%;
+        width: 900px;
+        display: inline-block;
       }
       form {
         width:300px;
@@ -63,6 +52,10 @@
         margin-top: -100px;
         margin-left: -100px;
       }
+      .ex {
+        width: 120px;
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
@@ -70,11 +63,9 @@
     </p>
     <img src = "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png" width="100">
     <form id="thing" action="convert()">
-      first number:  <input type="number" onkeyup="manage(this)" id="firstn" name="firstn" value=""><br><br>
-      <label class="err" for="firstn" id="nErr"></label>
-      second number: <input type="number" onkeyup="manage(this)" id="lastn" name="lastn" value=""><br><br>
-      <label class="err" for="lastn" id="mErr"></label>
-      operation:     <select id="op" onchange="manage(this)" name="operation">
+      <label for="firstn" class="ex">first number:</label><input type="number" onkeyup="manage(this)" id="firstn" name="firstn" value=""><label class="err" for="firstn" id="nErr"></label><br><br>
+      <label for="lastn" class="ex">second number:</label><input type="number" onkeyup="manage(this)" id="lastn" name="lastn" value=""><label class="err" for="lastn" id="mErr"></label><br><br>
+      <label for="op" class="ex">operation:</label><select id="op" onchange="manage(this)" name="operation">
         <option value=""></option>
         <option value="/">/</option>
         <option value="+">+</option>
@@ -85,8 +76,7 @@
         <option value="%">%</option>
         <option value="-">-</option>
         <option value="^">^</option>
-      </select><br><br>
-      <label for="op" id="oErr" class="err"></label>
+      </select><label for="op" id="oErr" class="err"></label><br><br>
     </form>
     <input type="submit" value="Try it" id="bt" onclick="convert()" disabled>
     <p id="me">The answer will be here:</p>
@@ -119,7 +109,6 @@
           document.getElementById("oErr").innerHTML = "";
         }
 
-        console.log(valid);
         var bt = document.getElementById("bt");
         if (! valid){
           bt.disabled = true;
