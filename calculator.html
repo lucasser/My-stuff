@@ -12,16 +12,18 @@
         width:60px;
         height:30px;
         position: fixed;
-        top: 75%;
+        top: 65%;
         left: 50%;
         margin-top: -100px;
         margin-left: -100px;
       }
-      #output {color:green;
-        top: 85%;
+      #output {
+        color:green;
+        top: 75%;
       }
-      #me {color:green;
-        top: 80%;
+      #me {
+        color:green;
+        top: 70%;
       }
       p{
         width:300px;
@@ -37,13 +39,16 @@
         display: inline-block;
       }
       form {
-        width:300px;
+        width:100000px;
         height:300px;
         position: fixed;
         top: 50%;
         left: 50%;
         margin-top: -100px;
         margin-left: -100px;
+      }
+      .input{
+        width: 150px;
       }
       img {
         position: fixed;
@@ -63,9 +68,9 @@
     </p>
     <img src = "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png" width="100">
     <form id="thing" action="convert()">
-      <label for="firstn" class="ex">first number:</label><input type="number" onkeyup="manage(this)" id="firstn" name="firstn" value=""><label class="err" for="firstn" id="nErr"></label><br><br>
-      <label for="lastn" class="ex">second number:</label><input type="number" onkeyup="manage(this)" id="lastn" name="lastn" value=""><label class="err" for="lastn" id="mErr"></label><br><br>
-      <label for="op" class="ex">operation:</label><select id="op" onchange="manage(this)" name="operation">
+      <label for="firstn" class="ex">first number:</label><input type="number" onkeyup="manage(this)" class="input" id="firstn" name="firstn" value=""><label class="err" for="firstn" id="nErr"></label><br><br>
+      <label for="lastn" class="ex">second number:</label><input type="number" onkeyup="manage(this)" class="input" id="lastn" name="lastn" value=""><label class="err" for="lastn" id="mErr"></label><br><br>
+      <label for="op" class="ex">operation:</label><select id="op" onchange="manage(this)" class="input" name="operation">
         <option value=""></option>
         <option value="/">/</option>
         <option value="+">+</option>
@@ -88,7 +93,7 @@
         var n = parseInt(document.getElementById("firstn").value);
         if (Number.isNaN(n) || n < 0) {
           valid = false;
-          document.getElementById("nErr").innerHTML = "Enter non-negative integer.";
+          document.getElementById("nErr").innerHTML = " Enter non-negative integer.";
         } else {
           document.getElementById("nErr").innerHTML = "";
         }
@@ -96,7 +101,7 @@
         var m = parseInt(document.getElementById("lastn").value);
         if (Number.isNaN(m) || m < 0) {
           valid = false;
-          document.getElementById("mErr").innerHTML = "Enter non-negative integer.";
+          document.getElementById("mErr").innerHTML = " Enter non-negative integer.";
         } else {
           document.getElementById("mErr").innerHTML = "";
         }
@@ -104,7 +109,7 @@
         var o = document.getElementById("op").value;
         if (o === "") {
           valid = false;
-          document.getElementById("oErr").innerHTML = "Enter valid operation";
+          document.getElementById("oErr").innerHTML = " Enter valid operation";
         } else {
           document.getElementById("oErr").innerHTML = "";
         }
