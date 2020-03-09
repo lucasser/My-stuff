@@ -33,6 +33,7 @@
       }
       .err{
         color: red;
+        align: right;
       }
       #nErr {
         left: 78%;
@@ -67,13 +68,12 @@
   <body>
     <p id="o">This is the calculator:
     </p>
-    <!--
-    <phajxvgjhvga id="">the function is: </p>
-    -->
     <img src = "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png" width="100">
-    <form id="thing" action="javascript:alert('tutu')">
+    <form id="thing" action="convert()">
       first number:  <input type="number" onkeyup="manage(this)" id="firstn" name="firstn" value=""><br><br>
+      <label class="err" for="firstn" id="nErr"></label>
       second number: <input type="number" onkeyup="manage(this)" id="lastn" name="lastn" value=""><br><br>
+      <label class="err" for="lastn" id="mErr"></label>
       operation:     <select id="op" onchange="manage(this)" name="operation">
         <option value=""></option>
         <option value="/">/</option>
@@ -86,40 +86,48 @@
         <option value="-">-</option>
         <option value="^">^</option>
       </select><br><br>
+      <label for="op" id="oErr" class="err"></label>
     </form>
-    <input type="submit" id="bt" onclick="convert()" value="try it" disabled></input>
+    <input type="submit" value="Try it" id="bt" onclick="convert()" disabled>
     <p id="me">The answer will be here:</p>
     <p id="output"></p>
-    <p class="err" id="nErr"></p>
-    <p class="err" id="mErr"></p>
-    <p class="err" id="oErr"></p>
-
     <script>
-      function manage(n1,n2,op) {
-        var x = document.getElementById("thing");
+      function manage() {
         var valid = true;
 
-        var n = parseInt(x.elements[0].value);
+        var n = parseInt(document.getElementById("firstn").value);
         if (Number.isNaN(n) || n < 0) {
           valid = false;
           document.getElementById("nErr").innerHTML = "Enter non-negative integer.";
+        } else {
+          document.getElementById("nErr").innerHTML = "";
         }
 
-        var m = parseInt(x.elements[1].value);
+        var m = parseInt(document.getElementById("lastn").value);
         if (Number.isNaN(m) || m < 0) {
           valid = false;
           document.getElementById("mErr").innerHTML = "Enter non-negative integer.";
+        } else {
+          document.getElementById("mErr").innerHTML = "";
         }
 
-        var o = x.elements[2].value;
+        var o = document.getElementById("op").value;
         if (o === "") {
           valid = false;
-          document.getElementById("oErr").innerHTML = "Enter non-negative integer.";
+          document.getElementById("oErr").innerHTML = "Enter valid operation";
+        } else {
+          document.getElementById("oErr").innerHTML = "";
         }
 
-        var bt = document.getElementById('bt');
-        bt.disabled = ! valid;
+        console.log(valid);
+        var bt = document.getElementById("bt");
+        if (! valid){
+          bt.disabled = true;
+        } else {
+          bt.disabled = false;
+        }
       }
+
       function add(n, m) {
         if (n === 0) {
           return m
@@ -235,10 +243,9 @@
         }
       }
       function convert() {
-        var x = document.getElementById("thing");
-        var n = parseInt(x.elements[0].value);
-        var m = parseInt(x.elements[1].value);
-        var o = x.elements[2].value;
+        var n = parseInt(document.getElementById("firstn").value);
+        var m = parseInt(document.getElementById("lastn").value);
+        var o = document.getElementById("op").value;
         var answer = count(n, o, m);
         document.getElementById("output").innerHTML = answer;
       }
