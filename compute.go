@@ -105,11 +105,12 @@ func factorial(n uint) uint {
 		return times(n, factorial(n-1))
 	}
 }
-func lcm(n, m uint) uint {
-	if m == 1 {
-		return n
-	}
-	if n == 1 {
-		return m
-	}
-}
+
+//func lcm(n, m uint) uint {
+//if m == 1 {
+//return n
+//}
+//if n == 1 {
+//return m
+//}
+//}
