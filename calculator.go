@@ -12,8 +12,15 @@ func main() {
 	// call main_cmd() or
 	if cmd == "cmd" {
 		main_cmd()
-	} else {
+	}
+	if cmd == "web" {
 		main_server()
+	}
+	if cmd == "lucas" {
+		println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n your computer crashed")
+	} else {
+		fmt.Print("wrong command\n")
+		fmt.Println("enter 'code.exe lucas'")
 	}
 }
 
@@ -38,6 +45,9 @@ func computePrep(a, b uint, o string) (string, error) {
 	}
 	if o == "+" {
 		return fmt.Sprint(add(a, b)), nil
+	}
+	if o == "lcm" {
+		return fmt.Sprint(lcm(a, b)), nil
 	}
 	if o == "*" {
 		return fmt.Sprint(times(a, b)), nil
@@ -67,7 +77,7 @@ func main_cmd() {
 				break
 			}
 			if o == "lucas" {
-				fmt.Print("panic: runtime error: index out of range [1] with length 1")
+				fmt.Print("panic: runtime error: index out of range [1] with length 1 goroutine 1 [running]: main.main() C:/Users/Marianna/Dropbox/Lucas/code/calculator.go:11 +0x1ba\n")
 			} else {
 				fmt.Printf("why did you give me %s\n", o)
 				fmt.Println("enter lucas")
