@@ -134,7 +134,6 @@
         var formElement = document.getElementById("thing");
         console.log(formElement);
         xhttp.open("POST", "calculator", true);
-        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhttp.send(new FormData(formElement));
       }
     </script>

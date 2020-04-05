@@ -15,7 +15,34 @@ func main() {
 	} else {
 		main_server()
 	}
-	// call main_server()
+}
+
+func computePrep(a, b uint, o string) (string, error) {
+	if o == "!" {
+		return fmt.Sprint(factorial(a)), nil
+	}
+	if o == "/" {
+		return divide(a, b), nil
+	}
+	if o == "^" {
+		return fmt.Sprint(power(a, b)), nil
+	}
+	if o == "%" {
+		return fmt.Sprint(remeinder(a, b)), nil
+	}
+	if o == "gcd" {
+		return fmt.Sprint(gcd(a, b)), nil
+	}
+	if o == "tn" {
+		return fmt.Sprint(tnumber(a)), nil
+	}
+	if o == "+" {
+		return fmt.Sprint(add(a, b)), nil
+	}
+	if o == "*" {
+		return fmt.Sprint(times(a, b)), nil
+	}
+	return "", fmt.Errorf("unknown operation")
 }
 
 func main_cmd() {
@@ -34,39 +61,9 @@ func main_cmd() {
 		for {
 			fmt.Println("enter an operation: ")
 			fmt.Scanf("%s\n", &o)
-
-			if o == "!" {
-				timeIt(func() {
-					fmt.Println(factorial(a))
-				})
-				break
-			}
-			if o == "/" {
-				fmt.Println(divide(a, b))
-				break
-			}
-			if o == "^" {
-				fmt.Println(power(a, b))
-				break
-			}
-			if o == "%" {
-				fmt.Println(remeinder(a, b))
-				break
-			}
-			if o == "gcd" {
-				fmt.Println(gcd(a, b))
-				break
-			}
-			if o == "tn" {
-				fmt.Println(tnumber(a))
-				break
-			}
-			if o == "+" {
-				fmt.Println(add(a, b))
-				break
-			}
-			if o == "*" {
-				fmt.Println(times(a, b))
+			res, err := computePrep(a, b, o)
+			if err == nil {
+				fmt.Println(res)
 				break
 			}
 			if o == "lucas" {
