@@ -77,7 +77,7 @@ func main_cmd() {
 				break
 			}
 			if o == "lucas" {
-				fmt.Print("panic: runtime error: index out of range [1] with length 1 goroutine 1 [running]: main.main() C:/Users/Marianna/Dropbox/Lucas/code/calculator.go:11 +0x1ba\n")
+				fmt.Print("panic: runtime error: index out of range [1] with length 1\n\ngoroutine 1 [running]:\nmain.main()\n\t\aC:/Users/Marianna/Dropbox/Lucas/code/calculator.go:11 +0x1ba\n\n")
 			} else {
 				fmt.Printf("why did you give me %s\n", o)
 				fmt.Println("enter lucas")
