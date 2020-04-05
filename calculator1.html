@@ -87,55 +87,56 @@
     </form>
     <p id="me">The answer will be here:</p>
     <p id="output"></p>
+    <p id="lost"></p>
     <script>
-      function manage() {
-        var valid = true;
+    function manage() {
+      var valid = true;
 
-        var n = parseInt(document.getElementById("firstn").value);
-        if (Number.isNaN(n) || n < 0) {
-          valid = false;
-          document.getElementById("nErr").innerHTML = " Enter non-negative integer.";
-        } else {
-          document.getElementById("nErr").innerHTML = "";
-        }
-
-        var m = parseInt(document.getElementById("lastn").value);
-        if (Number.isNaN(m) || m < 0) {
-          valid = false;
-          document.getElementById("mErr").innerHTML = " Enter non-negative integer.";
-        } else {
-          document.getElementById("mErr").innerHTML = "";
-        }
-
-        var o = document.getElementById("op").value;
-        if (o === "") {
-          valid = false;
-          document.getElementById("oErr").innerHTML = " Enter valid operation";
-        } else {
-          document.getElementById("oErr").innerHTML = "";
-        }
-
-        var bt = document.getElementById("bt");
-        if (! valid){
-          bt.disabled = true;
-        } else {
-          bt.disabled = false;
-        }
+      var n = parseInt(document.getElementById("firstn").value);
+      if (Number.isNaN(n) || n < 0) {
+        valid = false;
+        document.getElementById("nErr").innerHTML = " Enter non-negative integer.";
+      } else {
+        document.getElementById("nErr").innerHTML = "";
       }
-      function compute() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("output").innerHTML =
-            this.responseText;
-          } else {
-            document.getElementById("output").innerHTML = this.status + " " + this.responseText;
-          }
-        };
-        var formElement = document.getElementById("thing");
-        xhttp.open("POST", "calculator", true);
-        xhttp.send(new FormData(formElement));
+
+      var m = parseInt(document.getElementById("lastn").value);
+      if (Number.isNaN(m) || m < 0) {
+        valid = false;
+        document.getElementById("mErr").innerHTML = " Enter non-negative integer.";
+      } else {
+        document.getElementById("mErr").innerHTML = "";
       }
+
+      var o = document.getElementById("op").value;
+      if (o === "") {
+        valid = false;
+        document.getElementById("oErr").innerHTML = " Enter valid operation";
+      } else {
+        document.getElementById("oErr").innerHTML = "";
+      }
+
+      var bt = document.getElementById("bt");
+      if (! valid){
+        bt.disabled = true;
+      } else {
+        bt.disabled = false;
+      }
+    }
+    function compute() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("output").innerHTML =
+          this.responseText;
+        } else {
+          document.getElementById("output").innerHTML = this.status + " " + this.responseText;
+        }
+      };
+      var formElement = document.getElementById("thing");
+      xhttp.open("POST", "calculator", true);
+      xhttp.send(new FormData(formElement));
+    };
     </script>
   </body>
 </html>
