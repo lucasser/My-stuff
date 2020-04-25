@@ -15,7 +15,6 @@ func calculator(w http.ResponseWriter, r *http.Request) {
 		// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
 		if err := r.ParseMultipartForm(10000); err != nil {
 			fmt.Fprintf(w, "ParseForm() err: %v", err)
-			return
 		}
 		n, _ := strconv.ParseUint(r.FormValue("lastn"), 10, 32)
 		m, _ := strconv.ParseUint(r.FormValue("firstn"), 10, 32)
@@ -32,5 +31,6 @@ func calculator(w http.ResponseWriter, r *http.Request) {
 
 func main_server() {
 	http.HandleFunc("/calculator", calculator)
+	http.HandleFunc("/calculatorNoV", NoVal)
 	http.ListenAndServe(":8090", nil)
 }

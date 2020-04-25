@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>calculator</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      h1 {
+        text-align: center;
+        top: 0px;
+        margin-bottom: -10px;
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Fixi-Dash</h1>
+    <canvas class="gamebd">
+    <p>Your browser doesn't support canvas. Boo hoo!</p>
+    </canvas>
+    <script>
+      const canvas = document.querySelector('.gamebd');
+      const width = canvas.width = window.innerWidth;
+      const height = canvas.height = window.innerHeight+20;
+      const ctx = canvas.getContext('2d');
+
+      function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+      };
+
+      function rand(min, max) {
+        return Math.floor(Math.random() * (max-min+1)) + (min);
+      }
+
+      ctx.fillStyle = 'rgb(19, 193, 232)';
+      ctx.fillRect(0, 20, width/2, height/2);
+      //green rect(grass)
+      ctx.fillStyle = 'rgb(0, 255, 0)';
+      ctx.fillRect(0, 4*height/5, width, height/5);
+
+      //img
+      /*
+      let image = new Image();
+      image.src = 'pokemon_in_training_composition.jpg';
+      image.onload = function() {
+        ctx.drawImage(image, 20, 20, 185, 175, 50, 50, 185, 175);
+      }*/
+      let image = new Image();
+      image.src = 'walk-right.png';
+      image.onload = draw;
+      let sprite = 0;
+      let posX = 0;
+      function draw() {
+        ctx.fillStyle = 'rgb(19, 193, 232)';
+        ctx.fillRect(0, 20, width/2, height/2);
+        //green rect(grass)
+        ctx.fillStyle = 'rgb(0, 255, 0)';
+        ctx.fillRect(0, 4*height/5, width, height/5);
+
+        ctx.fillRect(width/2, height/2, width, height);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, 0+posX, -74, 102, 148);
+
+        if (posX % 13 === 0) {
+          if (sprite === 5) {
+            sprite = 0;
+          } else {
+            sprite++;
+          }
+        }
+        if(posX > width/2) {
+          newStartPos = -((width/2) + 102);
+          posX = Math.ceil(newStartPos / 13) * 13;
+          console.log(posX);
+        } else {
+          posX += 2;
+        }
+        window.requestAnimationFrame(draw);
+      };
+    </script>
+  </body>
+</html>

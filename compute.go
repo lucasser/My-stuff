@@ -92,7 +92,7 @@ func divide(n, m uint) string {
 		}
 		var cs = fmt.Sprintf("%d", c)
 		var ns = fmt.Sprintf("%d", n)
-		return cs + " R" + ns
+		return cs + " R " + ns
 	}
 }
 func factorial(n uint) uint {

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>calculator</title>
+    <style media="screen">
+      body {background:yellow;}
+      #o {
+        color:purple;
+        top: 20%;
+      }
+      #bt {
+        width:60px;
+        height:30px;
+        position: fixed;
+        top: 65%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      #output {
+        color:green;
+        top: 75%;
+      }
+      #me {
+        color:green;
+        top: 70%;
+      }
+      p{
+        width:300px;
+        height:300px;
+        position: fixed;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      .err{
+        color: red;
+        width: 900px;
+        margin-left: 32px;
+        display: inline-block;
+      }
+      form {
+        width:100000px;
+        height:300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      .input{
+        width: 150px;
+      }
+      img {
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      .ex {
+        width: 120px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="o">This is the calculator:</p>
+    <img src = "https://www.kasandbox.org/programming-images/avatars/aqualine-tree.png" width="100">
+    <form id="thing" method="POST" action="/calculator" >
+      <label for="firstn" class="ex">first number:</label><input type="text" class="input" id="firstn" name="firstn" value=""><label class="err" for="firstn" id="nErr"></label><br><br>
+      <label for="lastn" class="ex">second number:</label><input type="text" class="input" id="lastn" name="lastn" value=""><label class="err" for="lastn" id="mErr"></label><br><br>
+      <label for="op" class="ex">operation:</label><tnput type="text" id="op" class="input" name="operation"><label for="op" id="oErr" class="err"></label><br><br>
+      <button type="button"id="bt" onclick="compute()" >try it</button>
+    </form>
+    <p id="me">The answer will be here:</p>
+    <p id="output"></p>
+    <script>
+    function compute() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("output").innerHTML =
+          this.responseText;
+        } else {
+          document.getElementById("output").innerHTML = this.status + " " + this.responseText;
+        }
+      };
+      var formElement = document.getElementById("thing");
+      xhttp.open("POST", "calculator", true);
+      xhttp.send(new FormData(formElement));
+    };
+    </script>
+  </body>
+</html>
