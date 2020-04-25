@@ -43,12 +43,12 @@
       function draw() {
         //sky
         ctx.fillStyle = 'rgb(19, 193, 232)';
-        ctx.fillRect(-width, -height-20, 2*width, 2*height);
+        ctx.fillRect(-width, -height/3-120, 2*width, 2*height);
         //green rect(grass)
         ctx.fillStyle = 'rgb(0, 255, 0)';
-        ctx.fillRect(-width, 4*(height/2)/5, 2*width, 5*height);
+        ctx.fillRect(-width, 4*(height/2)/5-20, 2*width, 5*height);
 
-        ctx.drawImage(image, (sprite*102), 0, 102, 148, 0+posX, -74, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, 0+posX, 150, 102, 148);
 
         var rightPressed = false;
         var leftPressed = false;
@@ -71,21 +71,25 @@
               leftPressed = false;
           }
         }
+        if(rightPressed) {
+            console.log("right");
+        }
+      else if(leftPressed) {
+        console.log("left");
+      }
         if (posX % 13 === 0) {
           if (sprite === 5) {
             sprite = 0;
+          } else {
+            sprite++;
           }
         }
         if(posX > width/2) {
           newStartPos = -((width/2) + 102);
           posX = Math.ceil(newStartPos / 13) * 13;
           console.log(posX);
-        } else if (leftPressed = true) {
-          posX -= 2;
-          sprite --
-        } else if (rightPressed = true) {
+        } else {
           posX += 2;
-          sprite ++
         }
         window.requestAnimationFrame(draw);
       };
