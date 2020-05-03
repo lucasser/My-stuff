@@ -142,7 +142,7 @@
         document.getElementById("output").innerHTML = this.status + " " + this.responseText;
       }
       var formElement = document.getElementById("thing");
-      xhr.open("GET", url, true);
+      xhr.open("POST", url, true);
       xhr.send(new FormData(formElement));
     };
     </script>
