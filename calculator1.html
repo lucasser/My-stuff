@@ -123,6 +123,7 @@
         bt.disabled = false;
       }
     }
+    var url = "https://us-central1-calculator-274703.cloudfunctions.net/Calculator"
     function compute() {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
@@ -134,7 +135,7 @@
         }
       };
       var formElement = document.getElementById("thing");
-      xhttp.open("POST", "calculator", true);
+      xhttp.open("POST", url, true);
       xhttp.send(new FormData(formElement));
     };
     </script>

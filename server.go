@@ -16,8 +16,8 @@ func calculator(w http.ResponseWriter, r *http.Request) {
 		if err := r.ParseMultipartForm(10000); err != nil {
 			fmt.Fprintf(w, "ParseForm() err: %v", err)
 		}
-		n, _ := strconv.ParseUint(r.FormValue("lastn"), 10, 32)
-		m, _ := strconv.ParseUint(r.FormValue("firstn"), 10, 32)
+		n, _ := strconv.ParseUint(r.FormValue("firstn"), 10, 32)
+		m, _ := strconv.ParseUint(r.FormValue("lastn"), 10, 32)
 		o := r.FormValue("operation")
 		ans, _ := computePrep(uint(n), uint(m), o)
 		fmt.Fprintf(w, ans)
