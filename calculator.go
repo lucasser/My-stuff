@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"runtime"
 	"time"
 )
 
@@ -11,19 +12,24 @@ func main() {
 	cmd := os.Args[1]
 	// call main_cmd() or
 	if cmd == "cmd" {
-		main_cmd()
+		mainCmd()
 	}
 	if cmd == "web" {
-		main_server()
+		mainServer()
+	}
+	if cmd == "fact" {
+		mainFactor()
 	}
 	if cmd == "lucas" {
-		println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n your computer crashed")
+		println("panic: runtime error: index out of range [1] with length 1\n\ngoroutine 1 [running]:\nmain.main()\n\t\aC:/Users/Marianna/Dropbox/Lucas/code/calculator.go:11 +0x1ba\n\n")
 	} else {
 		fmt.Print("wrong command\n")
 		fmt.Println("enter 'code.exe lucas'")
 	}
 }
+func mainClass() {
 
+}
 func computePrep(a, b uint, o string) (string, error) {
 	if o == "!" {
 		return fmt.Sprint(factorial(a)), nil
@@ -55,7 +61,7 @@ func computePrep(a, b uint, o string) (string, error) {
 	return "", fmt.Errorf("unknown operation")
 }
 
-func main_cmd() {
+func mainCmd() {
 	for {
 		var o string
 		var a, b uint
@@ -77,7 +83,8 @@ func main_cmd() {
 				break
 			}
 			if o == "lucas" {
-				fmt.Print("panic: runtime error: index out of range [1] with length 1\n\ngoroutine 1 [running]:\nmain.main()\n\t\aC:/Users/Marianna/Dropbox/Lucas/code/calculator.go:11 +0x1ba\n\n")
+				fmt.Print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n your computer crashed\n")
+				break
 			} else {
 				fmt.Printf("why did you give me %s\n", o)
 				fmt.Println("enter lucas")
@@ -85,11 +92,35 @@ func main_cmd() {
 		}
 	}
 }
+func mainFactor() {
+	numCPU := uint(runtime.NumCPU())
+	fmt.Printf("This computer has %d CPUs\n", numCPU)
+	for {
+		var a uint
+		fmt.Printf("Enter an interger to factor: ")
+		fmt.Scanf("%d\n", &a)
 
-func timeIt(f func()) {
+		var factors []uint
+		dur := timeIt(func() {
+			factors = factor(a, numCPU)
+		})
+		for _, f := range factors {
+			fmt.Println(f)
+		}
+		fmt.Printf("Computed in %v\n", dur)
+
+		numFactors := len(factors)
+		fmt.Printf("t(%v) = %v\n", a, numFactors)
+
+		//productOfFactors := uint(math.Pow(float64(a), float64(numFactors/2)))
+		//fmt.Printf("p(%v) = %v\n", a, productOfFactors)
+	}
+}
+
+func timeIt(f func()) time.Duration {
 	start := time.Now()
 	f()
 	end := time.Now()
 	dur := end.Sub(start)
-	fmt.Printf("Time: %v\n", dur)
+	return dur
 }

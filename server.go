@@ -29,8 +29,7 @@ func calculator(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func main_server() {
+func mainServer() {
 	http.HandleFunc("/calculator", calculator)
-	http.HandleFunc("/calculatorNoV", NoVal)
 	http.ListenAndServe(":8090", nil)
 }

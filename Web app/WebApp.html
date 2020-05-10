@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>calculator</title>
+    <style media="screen">
+      body {background:yellow;}
+      #title {
+        color:purple;
+        top: 20%;
+      }
+      #title2 {
+        left: 80%;
+        color:purple;
+        top: 20%;
+      }
+      #bt {
+        width:60px;
+        height:30px;
+        position: fixed;
+        top: 46%;
+        left: 20%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      #bt2 {
+        width:60px;
+        height:30px;
+        position: fixed;
+        top: 45%;
+        left: 80%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      #output {
+        color:green;
+        top: 55%;
+      }
+      #me {
+        color:green;
+        top: 50%;
+      }
+      #output2 {
+        color: green;
+        top:55%;
+        left: 80%;
+      }
+      #txt {
+        color: green;
+        top:50%;
+        left:80%;
+      }
+      p{
+        width:300px;
+        height:300px;
+        position: fixed;
+        left: 20%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      .err{
+        color: red;
+        width: 900px;
+        margin-left: 32px;
+        display: inline-block;
+      }
+      #Calculator {
+        width:100px;
+        height:300px;
+        position: fixed;
+        top: 30%;
+        left: 20%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      #factor {
+        width:100000px;
+        height:300px;
+        position: fixed;
+        top: 30%;
+        left: 80%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      .input{
+        width: 150px;
+      }
+      .ex {
+        width: 120px;
+        display: inline-block;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p id="title2">This is the factoring machine:</p>
+    <form id="factor" method="post" action="/WebApp">
+      <label for="numToFactor" class="ex">Enter an interger to factor: </label><input type="number" onkeyup="manageF(this)" class="input" id="numToFactor" name="numToFactor" value="">
+      <button type="button" id="bt2" disabled onclick="factor()" >try it</button>
+    </form>
+    <p id="txt">The answer will be here:</p>
+    <p id="output2"></p>
+
+    <p id="title">This is the calculator:</p>
+    <form id="Calculator" method="POST" action="/WebApp" >
+      <label for="firstn" class="ex">first number:</label><input type="number" onkeyup="manage(this)" class="input" id="firstn" name="firstn" value="">
+      <label for="lastn" class="ex">second number:</label><input type="number" onkeyup="manage(this)" class="input" id="lastn" name="lastn" value="">
+      <label for="op" class="ex">operation:</label><select id="op" onchange="manage(this)" class="input" name="op">
+        <option value=""></option>
+        <option value="/">/</option>
+        <option value="+">+</option>
+        <option value="lcm">lcm</option>
+        <option value="tn">triangular number</option>
+        <option value="!">factorial</option>
+        <option value="*">*</option>
+        <option value="gcd">gcd</option>
+        <option value="%">%</option>
+        <option value="-">-</option>
+        <option value="^">^</option>
+      </select>
+      <button type="button"id="bt" disabled onclick="compute()" >try it</button>
+    </form>
+    <p id="me">The answer will be here:</p>
+    <p id="output"></p>
+    <script>
+    function manage() {
+      var valid = true;
+
+      var n = parseInt(document.getElementById("firstn").value);
+      if (Number.isNaN(n) || n < 0) {
+        valid = false;
+      }
+
+      var m = parseInt(document.getElementById("lastn").value);
+      if (Number.isNaN(m) || m < 0) {
+        valid = false;
+      }
+
+      var o = document.getElementById("op").value;
+      if (o === "") {
+        valid = false;
+      }
+
+      var bt = document.getElementById("bt");
+      if (! valid){
+        bt.disabled = true;
+      } else {
+        bt.disabled = false;
+      }
+    }
+    function manageF() {
+      var bt = document.getElementById("bt2");
+      var n = parseInt(document.getElementById("numToFactor").value);
+      if (Number.isNaN(n) || n < 0) {
+        bt.disabled = true;
+      } else {
+        bt.disabled = false;
+      }
+    }
+
+    var url = "/"
+    function factor() {
+      var xhr = new XMLHttpRequest();
+      /*xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("output").innerHTML =
+          this.responseText;
+        } else {
+          document.getElementById("output").innerHTML = this.status + " " + this.responseText;
+        }
+      };*/
+      xhr.onload = function() {
+        document.getElementById("output").innerHTML =
+        this.responseText;
+      }
+      xhr.onerror = function() {
+        document.getElementById("output").innerHTML = this.status + " " + this.responseText;
+      }
+      var formElement = document.getElementById("Calculator");
+      xhr.open("POST", url, true);
+      xhr.send(new FormData(formElement));
+    };
+    var url = "https://us-central1-calculator-274703.cloudfunctions.net/Calculator"
+    function compute() {
+      var xhr = new XMLHttpRequest();
+      /*xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("output").innerHTML =
+          this.responseText;
+        } else {
+          document.getElementById("output").innerHTML = this.status + " " + this.responseText;
+        }
+      };*/
+      xhr.onload = function() {
+        document.getElementById("output").innerHTML =
+        this.responseText;
+      }
+      xhr.onerror = function() {
+        document.getElementById("output").innerHTML = this.status + " " + this.responseText;
+      }
+      var formElement = document.getElementById("Calculator");
+      xhr.open("POST", url, true);
+      xhr.send(new FormData(formElement));
+    };
+    </script>
+  </body>
+</html>
