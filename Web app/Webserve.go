@@ -6,13 +6,29 @@ import (
 	"strconv"
 )
 
+func html(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "WebApp.html")
+}
+func factornum(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case "POST":
+		if err := r.ParseMultipartForm(10000); err != nil {
+			fmt.Fprintf(w, "ParseForm() err: %v", err)
+		}
+		a, _ := strconv.ParseUint(r.FormValue("numToFactor"), 10, 32)
+		n := uint(a)
+		ans, _ := mainFactor(n)
+		fmt.Fprintf(w, "%v", ans)
+		// address := r.FormValue("address")
+		// fmt.Fprintf(w, "Name = %s\n", name)
+		// fmt.Fprintf(w, "Address = %s\n", address)
+	default:
+		fmt.Fprintf(w, "Sorry, only POST method is supported.")
+	}
+}
 func calculator(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
-	case "GET":
-		http.ServeFile(w, r, "WebApp.html")
 	case "POST":
-		fmt.Printf("GOT POST: %+v\n", r)
-		// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
 		if err := r.ParseMultipartForm(10000); err != nil {
 			fmt.Fprintf(w, "ParseForm() err: %v", err)
 		}
@@ -25,11 +41,13 @@ func calculator(w http.ResponseWriter, r *http.Request) {
 		// fmt.Fprintf(w, "Name = %s\n", name)
 		// fmt.Fprintf(w, "Address = %s\n", address)
 	default:
-		fmt.Fprintf(w, "Sorry, only GET and POST methods are supported.")
+		fmt.Fprintf(w, "Sorry, only POST method is supported.")
 	}
 }
 
 func mainServer() {
-	http.HandleFunc("/", calculator)
+	http.HandleFunc("/", html)
+	http.HandleFunc("/factor", factornum)
+	http.HandleFunc("/calculator", calculator)
 	http.ListenAndServe(":8090", nil)
 }

@@ -62,24 +62,18 @@ func computePrep(a, b uint, o string) (string, error) {
 	return "", fmt.Errorf("unknown operation")
 }
 
-func mainFactor() {
+func mainFactor(a uint) ([]uint, string) {
 	numCPU := uint(runtime.NumCPU())
+	numCPU = 3
 	for {
-		var a uint
-		fmt.Printf("Enter an interger to factor: ")
-		fmt.Scanf("%d\n", &a)
-
 		var factors []uint
 		dur := timeIt(func() {
 			factors = factor(a, numCPU)
 		})
-		for _, f := range factors {
-			fmt.Println(f)
-		}
 		fmt.Printf("Computed in %v\n", dur)
-
 		numFactors := len(factors)
-		fmt.Printf("t(%v) = %v\n", a, numFactors)
+		tOfn := fmt.Sprintf("t(%v) = %v\n", a, numFactors)
+		return factors, tOfn
 
 		//productOfFactors := uint(math.Pow(float64(a), float64(numFactors/2)))
 		//fmt.Printf("p(%v) = %v\n", a, productOfFactors)
