@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"sync"
 )
 
@@ -110,22 +111,36 @@ func lcm(n, m uint) uint {
 	}
 	return n * m / gcd(n, m)
 }
-
 func factor(n uint, numCPU uint) []uint {
-	res := []uint{1}
+	if n == 1 {
+		return []uint{1}
+	}
+	if n == 2 {
+		return []uint{1, 2}
+	}
+	res := []uint{}
 	var (
 		start, stop, min, max, perCPU uint
 	)
-	stop = n - 1
-	start = 2
-	perCPU = stop / numCPU
 
 	wg := sync.WaitGroup{}
 	mux := sync.RWMutex{}
+	h := float64(n)
+	start = 1
+	s := math.Sqrt(h)
+	stop = uint(s) + 1
+	perCPU = (stop) / numCPU
+	if perCPU == 0 {
+		perCPU = 1
+	}
+	fmt.Println(perCPU)
 	min = start
 	max = start + perCPU
 	for {
 		wg.Add(1)
+		if max > stop {
+			max = stop
+		}
 		go func(min, max uint) {
 			fmt.Printf("Starting %v to %v\n", min, max)
 			defer wg.Done()
@@ -138,7 +153,7 @@ func factor(n uint, numCPU uint) []uint {
 		}(min, max)
 		min += perCPU
 		max += perCPU
-		if min > stop {
+		if min > stop || perCPU == 0 {
 			break
 		}
 		if max > stop {
@@ -146,16 +161,22 @@ func factor(n uint, numCPU uint) []uint {
 		}
 	}
 	wg.Wait()
-	res = append(res, n)
+	res = append(res)
 	return res
 }
 
 func factorRange(n uint, min, max uint) []uint {
 	var res []uint
 	m := uint(min)
+	var k uint
 	for m < max {
 		if n%m == 0 {
-			res = append(res, m)
+			k = n / m
+			if k == m {
+				res = append(res, m)
+				break
+			}
+			res = append(res, m, k)
 		}
 		m++
 	}

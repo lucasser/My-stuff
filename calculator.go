@@ -95,10 +95,13 @@ func mainCmd() {
 func mainFactor() {
 	numCPU := uint(runtime.NumCPU())
 	fmt.Printf("This computer has %d CPUs\n", numCPU)
+	//numCPU = 2
 	for {
 		var a uint
 		fmt.Printf("Enter an interger to factor: ")
 		fmt.Scanf("%d\n", &a)
+		fmt.Printf("Enter number of CPUs to use: ")
+		fmt.Scanf("%d\n", &numCPU)
 
 		var factors []uint
 		dur := timeIt(func() {

@@ -64,7 +64,6 @@ func computePrep(a, b uint, o string) (string, error) {
 
 func mainFactor(a uint) ([]uint, string) {
 	numCPU := uint(runtime.NumCPU())
-	numCPU = 3
 	for {
 		var factors []uint
 		dur := timeIt(func() {
