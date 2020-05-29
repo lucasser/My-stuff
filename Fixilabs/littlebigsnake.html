@@ -1,0 +1,755 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" data-lt-installed="true"><head>
+    <title>Little Big Snake - Official Website</title>
+    <meta name="google" value="notranslate">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <title>littlebigsnake.com</title>
+    <meta name="description" content="Play Little Big Snake unblocked on the official website for free. New updates weekly, play with your friends and others online.">
+    <meta property="og:description" content="Play Little Big Snake unblocked on the official website for free. New updates weekly, play with your friends and others online.">
+    <meta name="keywords" content="littlebigsnake, snake, snakes, worm, worms, game, games, web game, fun">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="littlebigsnake.com">
+    <meta property="og:url" content="https://littlebigsnake.com/">
+    <meta property="og:site_name" content="littlebigsnake.com">
+    <meta property="og:image" content="https://littlebigsnake.com/img/sharing_img.png">
+    <meta name="google-site-verification" content="R1YWH0RwGsmyLzBoEeHp8XWkYE30Cg_s_ybcze3YkVo">
+
+    <script id="xsolla" src="js/xsolla.js"></script><script id="paystation" src="https://static.xsolla.com/embed/paystation/1.0.7/widget.min.js"></script><script id="mainjs" src="js/web.js"></script><script src="https://rules.quantcount.com/rules-p-5pR25819dph-b.js" async=""></script><script async="" src="https://sb.scorecardresearch.com/beacon.js"></script><script src="https://quantcast.mgr.consensu.org/cmp.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="https://secure.quantserve.com/quant.js"></script><script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TP9J9MD"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MLS5M8H"></script><script type="text/javascript" src="js/static.js"></script>
+    <script type="text/javascript" src="/config/config.js"></script>
+    <script type="text/javascript" src="js/countries.js"></script>
+
+    <script>
+        startTime = new Date().getTime();
+        dataLayer = [];
+        urlParams = {};
+
+        function parseUrlParams(location) {
+            var url = location.search.substring(1);
+            var match,
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) {
+                    return decodeURIComponent(s.replace(/\+/g, " "));
+                };
+            while (match = search.exec(url)) {
+                urlParams[decode(match[1])] = decode(match[2]);
+            }
+        }
+
+        try {
+            if (window.parent && window.parent.location) {
+                parseUrlParams(window.parent.location);
+            }
+        } catch (e) {
+            console.log(e);
+        }
+
+        parseUrlParams(window.location);
+
+        if (urlParams.api_url && urlParams.api_url.indexOf("api.vk.com") >= 0) {
+            platform = window.platform = "vk";
+        } else {
+            if (window.name == "iframe_canvas_fb_https") {
+                platform = window.platform = "fb";
+            } else {
+                platform = window.platform = "web";
+            }
+        }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', CONFIG.gtmId);</script>
+
+    <!-- ENTHUSIAST GAMES GTM -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TP9J9MD');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/news.css">
+    <link rel="stylesheet" type="text/css" href="css/social_bar.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/sha256.js"></script>
+    <script type="text/javascript">
+        if (CONFIG.checkMaintenance) {
+            function check() {
+                $.ajax({
+                    type: "GET",
+                    url: "/get_maintenance",
+                    cache: false,
+                    success: function (time) {
+                        if (time > 0) {
+                            window.location.href = "/maintenance.html";
+                        }
+                    },
+                    error: function () {
+                        window.location.href = "/maintenance.html";
+                    }
+                });
+            }
+
+            var tld = window.location.host;
+            tld = tld.substring(tld.lastIndexOf(".") + 1);
+            if (tld != "io") {
+                check();
+            }
+        }
+    </script>
+
+
+    <!-- disable cookie bot. use EG privacy bot instead
+    <script>
+        var isCookiebotEnabled = true;
+
+        function CookiebotCallback_OnAccept() {
+            if (Cookiebot.consent.preferences)
+                dataLayer.push({'event': 'cookieconsent_preferences'});
+            if (Cookiebot.consent.statistics)
+                dataLayer.push({'event': 'cookieconsent_statistics'});
+            if (Cookiebot.consent.marketing)
+                dataLayer.push({'event': 'cookieconsent_marketing'});
+            if (Cookiebot.consent.unclassified)
+                dataLayer.push({'event': 'cookieconsent_unclassified'});
+        }
+
+        (function () {
+            $.ajax({
+                type: "GET",
+                cache: false,
+                url: "/get_country",
+                success: onGetCountry,
+                error: onGetCountryError
+            });
+
+            function onGetCountryError() {
+                window.Cookiebot = {
+                    consent: {
+                        marketing: true,
+                        statistics: true,
+                        unclassified: true,
+                        preferences: true
+                    }
+                };
+                if (window.CookiebotCallback_OnAccept) {
+                    window.CookiebotCallback_OnAccept();
+                }
+                isCookiebotEnabled = false;
+                $("#cookiebotButton").hide();
+            }
+
+            function onGetCountry(country) {
+                if (COUNTRIES.isEs(country)) {
+                    var firstScript = document.getElementsByTagName('script')[0];
+                    var newScript = document.createElement('script');
+                    newScript.async = true;
+                    newScript.setAttribute("data-cbid", CONFIG.cookieBotId);
+                    newScript.src = 'https://consent.cookiebot.com/uc.js';
+                    firstScript.parentNode.insertBefore(newScript, firstScript);
+                } else {
+                    onGetCountryError();
+                }
+            }
+        })();
+    </script>
+    -->
+</head>
+
+<body lang="en" data-gr-c-s-loaded="true">
+
+
+<div id="advertisement_banner_static">
+
+</div>
+
+
+<div id="main">
+    <div id="unityContainer">
+        <div id="unityContent" style="padding: 0px; margin: 0px; border: 0px; position: relative; background: rgb(35, 31, 32);"><canvas id="#canvas" style="width: 100%; height: 100%; cursor: default;" width="1062" height="531"></canvas></div>
+    </div>
+    <div id="preloader" class="posCenter" style="transform: translate(-50%, -50%) scale(0.885017);">
+        <img name="background" src="./img/lbs_loading_bg.jpg">
+        <div name="progress">
+            <div name="track" style="width: 100%;"></div>
+        </div>
+        <div class="label" name="title" lang-tag="loading_big">LOADING</div>
+        <div class="label" name="advice" id="advice" style="top: 610px; opacity: 1;">Slugs are pests who eat your food! Cleanse the arena homeland for the sake of your children's future!</div>
+    </div>
+
+    <div id="login" style="display: block;">
+        <div id="gamePanel" style="transform: translate(-50%, -50%) scale(0.885017); visibility: visible;">
+            <img name="background" src="./img/lbs_login_bg.jpg">
+            <div name="glow">
+                <img name="image" src="./img/lbs_login_bg_glow.jpg">
+            </div>
+
+            <div id="playButton" name="button" onmouseover="onPlayMouseOver(this, true)" onmouseout="onPlayMouseOver(this, false)" onclick="APP.onPlayClick()">
+                <div name="label"></div>
+            </div>
+
+            <img name="glowDots1" src="./img/lbs_button_glow_dots.png">
+            <img name="glowDots2" src="./img/lbs_button_glow_dots.png">
+
+            <div id="snakes">
+                <div name="snake1">
+                    <img name="eyes" src="./img/lbs_login_eyes1.png">
+                    <img name="snake" src="./img/lbs_login_snake1.png">
+                </div>
+                <div name="snake2">
+                    <img name="eyes" src="./img/lbs_login_eyes2.png">
+                    <img name="snake" src="./img/lbs_login_snake2.png">
+                </div>
+                <div name="snake3">
+                    <img name="eyes" src="./img/lbs_login_eyes3.png">
+                    <img name="snake" src="./img/lbs_login_snake3.png">
+                </div>
+                <div name="snake4">
+                    <img name="eyes" src="./img/lbs_login_eyes4.png">
+                    <img name="snake" src="./img/lbs_login_snake4.png">
+                </div>
+                <div name="snake5">
+                    <img name="eyes" src="./img/lbs_login_eyes5.png">
+                    <img name="snake" src="./img/lbs_login_snake5.png">
+                </div>
+                <div name="snake6">
+                    <img name="eyes" src="./img/lbs_login_eyes6.png">
+                    <img name="snake" src="./img/lbs_login_snake6.png">
+                </div>
+                <div name="snake7">
+                    <img name="eyes" src="./img/lbs_login_eyes7.png">
+                    <img name="snake" src="./img/lbs_login_snake7.png">
+                </div>
+                <div name="snake8">
+                    <img name="eyes" src="./img/lbs_login_eyes8.png">
+                    <img name="snake" src="./img/lbs_login_snake8.png">
+                </div>
+                <div name="snake9">
+                    <img name="eyes" src="./img/lbs_login_eyes9.png">
+                    <img name="snake" src="./img/lbs_login_snake9.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="screenConnectionLost" style="transform: translate(-50%, -50%) scale(0.885017);">
+        <img name="background" src="./img/lbs_bg.jpg" class="posCenter">
+
+        <div class="label" lang-tag="failed_to_server_connect" name="title">Failed to connect to server</div>
+
+        <div name="buttons">
+            <div name="button" class="bigButton" onclick="APP.reload()">
+                <div class="label" lang-tag="reload" name="label">Reload</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="screenForgot" style="transform: translate(-50%, -50%) scale(0.885017);">
+        <img name="background" src="./img/lbs_bg.jpg" class="posCenter">
+
+        <div class="label" lang-tag="password_recovery_colon" name="title">Password recovery:</div>
+
+        <div name="forgotPassword" class="inputWithLabel">
+            <div class="label" lang-tag="password_recovery_new_password" name="title">New password:</div>
+            <input name="input" type="password" id="forgotPassword" onchange="updateForgotInputsState();" -="" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+        </div>
+
+        <div name="forgotRePassword" class="inputWithLabel">
+            <div class="label" lang-tag="password_recovery_new_password_re" name="title">Repeat new password:</div>
+            <input name="input" type="password" id="forgotRePassword" onchange="updateForgotInputsState();" -="" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+        </div>
+
+        <div lang-tag="password_recovery_not_compared" class="label" name="labelError" id="forgotLabelError">The passwords<br>do not match</div>
+
+        <div name="buttons">
+            <div name="button_play" class="bigButton" onclick="onForgotSendClick(this)">
+                <div lang-tag="change_password" class="label" name="label">Change password</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="leafsBlock">
+        <div name="background">
+            <div name="leftBackground">
+
+            </div>
+            <div name="centerBackground">
+
+            </div>
+            <div name="rightBackground">
+
+            </div>
+        </div>
+
+        <div id="leafs" style="transform: translate(-50%, -50%) scale(0.885017);">
+            <img name="leaf1" src="./img/lbs_login_leaf1.png" style="top: 16px; left: 382px;">
+            <img name="leaf2" src="./img/lbs_login_leaf2.png" style="top: 143px; left: 842px;">
+            <img name="leaf3" src="./img/lbs_login_leaf3.png" style="top: 885px; left: 783px;">
+            <img name="leaf4" src="./img/lbs_login_leaf4.png" style="top: 895px; left: 213px;">
+            <img name="leaf5" src="./img/lbs_login_leaf5.png" style="top: 145px; left: 73px;">
+        </div>
+
+        <div id="leafsDark" style="transform: translate(-50%, -50%) scale(0.885017);">
+            <img name="image" src="./img/lbs_login_dark.png" style="transform: matrix(3.4, 0, 0, 3.4, 0, 0);">
+        </div>
+    </div>
+
+    <div id="copyrightPanel" style="transform: translate(-50%, 5.74913%) scale(0.885017); visibility: inherit; opacity: 1;">
+        <div class="label" name="title" lang-tag="copyright">Copyright © 2020 LittleBigSnake, Inc. All Rights Reserved. <a href="/contact_us.html">Contact Us</a>. <a name="url" target="_blank" href="https://littlebigsnake.com/docs/privacy_policy_en.html">Privacy policy</a>. <a name="url" target="_blank" href="https://littlebigsnake.com/docs/user_agreement_en.html">User agreement</a><br>Check out Addicting Games with tons of free online <a href="http://www.addictinggames.com" target="_blank" rel="nofollow">games</a> or play other <a href="http://iogames.space" target="_blank" rel="nofollow">io games</a> against live players on ioGames.space!</div>
+    </div>
+
+    <div id="buttonFullscreen" onclick="APP.toggleFullScreen()" style="visibility: inherit; opacity: 1;">
+
+    </div>
+
+    <img id="xsollaLogo" lang-title-tag="xsolla_description" src="./img/xsolla_logo.png" title="Xsolla is a cross-platform billing and analytic solution for video game developers and publishers" style="visibility: inherit; opacity: 1;">
+
+    <a id="button_addictinggames" href="http://www.addictinggames.com/" target="_blank" title="more games" rel="nofollow" style="visibility: inherit; opacity: 1;">
+        <img name="image" src="img/button_addict_games.png" alt="more games">
+
+
+    </a>
+
+    <div id="officialSitePanel" lang-tag="official_site" style="transform: translate(-50%, 0%) scale(0.885017); visibility: inherit; opacity: 1;">Official game site: <a name="url" target="_blank" href="https://littlebigsnake.com/">littlebigsnake.com</a></div>
+
+    <div id="advertisement_banner">
+
+    </div>
+
+    <div id="advertisement_banner2">
+
+    </div>
+
+    <div id="advertisement_banner_video">
+        <div lang-tag="advertisement" name="label">Advertisement</div>
+        <img name="bg" src="img/banner_place.png">
+    </div>
+
+    <div id="news" style="transform: translate(-50%, 5.74913%) scale(0.885017); visibility: inherit; opacity: 1;">
+        <div name="background">
+
+        </div>
+        <div name="content_sroller">
+            <div id="news_content" name="content">
+            <div class="story_block"><div class="story_block_title"><img name="image" src="../img/book_icon.png"><div name="text">Story</div></div><div class="story_block_description">Snake your way through the competition to complete missions, upgrade your skills and destroy other players. Devour nectar and energy left by opponents to increase your size, skills, and abilities. Smash your way up the food chain as you evolve into the ultimate Little Big Snake. <br>Challenge other players daily to become the biggest snake in the pit. Destroy your enemies by snaking around them and having them smash into you. Eat the yummy nectar left in their wake and collect keys, artifacts and other items to unlock levels, missions and allies. <br><br>Little Big Snake is the ultimate snake based IO game on mobile, welcome to the pit!</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">29.04.2020<br>Super Sale!</div></div><div class="news_block_description">• New VIP options!<br>• 2 times more rubies at the same price!<br>• New funny skins "Tomato" and "Soda"<br><br>Snake King, Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">16.12.2019<br>Merry Christmas and Happy New Year!</div></div><div class="news_block_description">Congratulations to all on the upcoming holidays and wish you a cool mood!<br><br>The Snake King, Rudolph XIV and his minions</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">19.11.2019<br>LIVE update</div></div><div class="news_block_description">• Observer mode! Keep an eye on your friends' game, watch the Rebels in real time!<br>• Collection replenishment! Meet the new Legendary skins!<br>• Mobile version at a new technological level!<br>• New smiles, old map, bright highlights for friends and many other things!<br><br>The Snake King, Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">25.09.2019<br>Official launch</div></div><div class="news_block_description">It happened!<br>The new version of the game without flash officially launched!<br>Thanks to everyone who participated in the testing.</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">13.09.2019<br>Technological breakthrough</div></div><div class="news_block_description">We launched a new version of the game, faster and flash-free!<br>Try it first!</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">23.05.2019<br>Legendary Update</div></div><div class="news_block_description">• New Legendary skins! Gather full skins collection and trade it for colorful Legendary skin.<br>• Regalias are added to the game! Wear a shiny trinket, make your snake individual.<br>• A new unexplored landscape, not yet visited even by the developers!<br>• Play with your friends without limits. Now it's possible to play in groups without VIP-status.<br><br>Snake King, Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">20.03.2019<br>Spring fever</div></div><div class="news_block_description">• New horizons! The evolution has got new levels and new look!<br>• Invite friends with ease! Use the link to join a friend or become friends automatically.<br>• Added an option to hide emoji panel<br>• Added "closed group" status saving for those who prefer to play alone.<br>• Message about rebel now is shorter, added rebel highlight on the minimap<br>• Renewed sounds, animations skip improved, added hints with skin names<br>• Many bugs are fixed</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">11.02.2019<br>St. Valentine's day!</div></div><div class="news_block_description">• More emotions! Express any emotions during a battle with new emotes!<br>• Unprecedented! Now you can pass the control to an autopilot! Yet it's better to hold your hands on the steering wheel. :)<br>• Chat with friends. By popular demand, a chat for VIP accounts is introduced.<br>• Now you can accept friendship request right in the battle arena!<br>• Joystick flip is now available on the mobile devices.<br><br>Love is as strong as death, but as fragile as glass. <br>Snake King, Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">21.12.2018<br>Mobile Christmas</div></div><div class="news_block_description">• Now in your phone! Launch the mobile version and get a reward!<br>• Listen! Now ther're sounds in the game!<br>• In honor of Christmas, now you can join the friends with skins you haven't unlocked yet once again!<br><br>Snake King, Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">08.09.2018<br>Autumn campaign</div></div><div class="news_block_description">• Battles. An indicator of earned keys is now active in the battles!<br>• The shop is totally revised. The comfortable subscriptions have appeared, profitable to anyone!<br>• Play with friends. Join a friend with active VIP when he or she is playing in a team!<br>• Play with friends. Now you can join a friend only if you have the same skin he or she is using!<br>• Unlock more nice characters, now for rubies!<br><br>Look up, the clouds are running,<br>It means - the Winter is coming!<br>Snake King, Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">24.08.2018<br>Renaissance</div></div><div class="news_block_description">• An extra life is now available to every snake!<br>• Extra keys are available without advertisement for VIP-owners!<br>• Less lags - more quality! The graphics rendering is improved, quality options are available in settings menu.<br><br>When the sun glows bright,<br>Crawl out for a fight!<br>Snake King, Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">01.08.2018<br>Age of Travels</div></div><div class="news_block_description">• A new age begins. Each snake sets off for a journey and shall pass through many dangerous places!<br>• Watch the sky closely! There're many cool things in the clouds!<br>• If you want to disable the advertisements forever - here you go!<br>• If you want to double the treasures - go for it!<br><br>King Rudolph XIV kinda hints that Renaissance is coming!</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">03.07.2018<br>Royal Chat</div></div><div class="news_block_description">A chat for the friends has appeared in our kingdom. Send private messages, create common rooms, get to the new level of communication with friends!<br><br>Snake King, Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">27.04.2018<br>Royal Shop</div></div><div class="news_block_description">• The Royal Shop with special offers has been opened! Purchase VIP account to support the Kingdom!<br>• Hunters get unique chests with various rewards for rebels' heads.<br>• The group rules were updated. To join a group of 2 or more snakes purchase VIP account.<br>• Everyone who suffered from empty chest bug will receive double compensation.<br><br>Have Fun &amp; Breed!<br>Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">19.04.2018<br>Royal education</div></div><div class="news_block_description">• A newbie education program has been launched! Samantha Snake will teach everyone the skills they need to thrive.  <br>• Each snake earns compensation for uncompleted quests: 100 rubies, 2000 gold.<br>• Achievements have been balanced. <br>• New formula issuing keys in arena.<br>• Daily bonus of New day which allows to collect keys faster.<br><br>Hail to king Rudolph XIV!</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">15.03.2018<br>Friends and rebels!</div></div><div class="news_block_description">• Names of nearby friends and enemies are shown on the screen. <br>• Now you can close your group and disable joining it!<br>• A button to add squad-mates to friends within the game session!<br>• By a royal decree, it is forbidden to help rebels. <br>• The rewards for rebels' heads and extra crowns is reduced due to the fight against corruption! <br>• Сonvenient sorting at the friends screen and other improvements!<br><br>Long live king Rudolph XIV!</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">27.02.2018<br>Royal Hunt!</div></div><div class="news_block_description">• Rudolph XIV announces royal hunt on the rebels who've gained over 100 tons of mass. The headhunters will be rewarded!<br>• New ring-world with a maze for highlanders in the center!<br>• More information in friends' windows and game results!<br>• Many minor improvements, old bugs are fixed, </div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">31.01.2018<br>The King hears!</div></div><div class="news_block_description">• Good friends should stand out in a crowd! And now: they do!<br>• Due to the Snake King's edict, there are 200 Princes in the kingdom now!<br>• Troubleshooting and enhancement of server stability has been made.<br><br>Snake King, Rudolph XIV</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">24.01.2018<br>Pack of improvements!</div></div><div class="news_block_description">• Earn more! Now extra crowns gained in the arena, are converted into gold.<br>• Play with your friends almost for free! The price for joining your friends' game is temporarily reduced to 1 gold coin.<br>• Chat at our <a href="https://discord.gg/m6AbfCw">Discord server</a>!<br>• Now you can see your team-mates and their actual score in arena rating.<br>• Server shutdown notification system is improved.<br>• Plenty of bugfixes.</div></div><div class="news_block"><div class="news_block_title"><img name="image" src="../img/news_icon_new.png"><div name="text">18.01.2018<br>News column!</div></div><div class="news_block_description">A news column is available in the game today! Now you'll be aware of all upcoming events and my sneaky plans. <br><br>Snake King, Rudolph XIV</div></div></div>
+        </div>
+    </div>
+
+    <div id="mobileSignInPanel" class="mobileSignInPanel" style="transform: translate(-50%, 14.5993%) scale(0.708014); visibility: inherit; opacity: 1;">
+        <div name="background"></div>
+        <div class="label" lang-tag="html_mobile_sign_in_panel_title" name="title">Sign in on mobile and claim your <span style="color: #FFC100">free VIP  account!</span></div>
+        <div name="buttons">
+            <div class="mobileSignInPanelButton" name="android" onclick="window.open('https://play.google.com/store/apps/details?id=air.com.littlebigsnake.littlebigsnake')"></div>
+            <div class="mobileSignInPanelButton" name="ios" onclick="window.open('https://itunes.apple.com/us/app/little-big-snake/id1441412472')"></div>
+        </div>
+        <img name="chest" src="./img/chest_image_small.png">
+    </div>
+
+    <div id="iframe_buttons_panel" style="transform: scale(0.885017);">
+        <div id="button_discord" class="iframe_button" style="display: block;">
+            <iframe name="iframe" src="frames/discord.html">
+            </iframe>
+        </div>
+
+        <div id="button_twitter" class="iframe_button" style="display: block;">
+            <iframe name="iframe" src="frames/twitter.html">
+            </iframe>
+        </div>
+
+        <div id="button_feedback" class="iframe_button" style="display: block;">
+            <iframe name="iframe" src="frames/feedback.html">
+            </iframe>
+        </div>
+    </div>
+
+
+    <!--  disable cookie bot. use EG privacy bot instead
+
+    <div id="cookiebotButton" onclick="Cookiebot.renew()" lang-tag="cookiebot_button_label">Privacy settings</div>
+    <script type="text/javascript">
+        if (!isCookiebotEnabled) {
+            $("#cookiebotButton").hide();
+        }
+    </script>
+    -->
+
+    <img id="logo" src="./img/lbs_login_logo.png">
+
+    <div id="advertisement_banner_static2">
+        <div lang-tag="advertisement" name="label">Advertisement</div>
+        <img name="bg" src="img/banner_place.png">
+    </div>
+
+    <div id="advertisement_banner_static3">
+    </div>
+
+    <div id="advertisement_banner_static4">
+    </div>
+
+    <div id="advertisement_banner_static5">
+    </div>
+
+    <div id="advertisement_banner_static6">
+    </div>
+
+
+</div>
+
+
+<div id="social_bar">
+
+</div>
+
+
+<script type="text/javascript">
+    $(window).on('resize', function () {
+        draw();
+    });
+
+    function draw() {
+        var w = $(window);
+        var defaultWidth = 861;
+        var defaultHeight = 861;
+        var contentScale = Math.min(/*w.width() / defaultWidth,*/ w.height() / defaultHeight) * 1;//0.8;
+        $("#gamePanel").css({transform: "translate(-50%,-50%) scale(" + (contentScale) + ")"});
+        $("#preloader").css({transform: "translate(-50%,-50%) scale(" + (contentScale) + ")"});
+        $("#leafs").css({transform: "translate(-50%,-50%) scale(" + (contentScale) + ")"});
+        $("#leafsDark").css({transform: "translate(-50%,-50%) scale(" + (contentScale) + ")"});
+        $("#screenConnectionLost").css({transform: "translate(-50%,-50%) scale(" + (contentScale) + ")"});
+        $("#screenForgot").css({transform: "translate(-50%,-50%) scale(" + (contentScale) + ")"});
+
+        var smartScale = Math.max(Math.min(contentScale, 1), 0.75);
+        $("#mobileSignInPanel").css({transform: "translate(-50%," + ((1 - (contentScale * 0.8)) * 50) + "%) scale(" + (contentScale * 0.8) + ")"});
+        $("#officialSitePanel").css({transform: "translate(-50%,0%) scale(" + (smartScale) + ")"});
+        $("#news").css({transform: "translate(-50%," + ((1 - smartScale) * 50) + "%) scale(" + (smartScale) + ")"});
+        $("#copyrightPanel").css({transform: "translate(-50%," + ((1 - smartScale) * 50) + "%) scale(" + (smartScale) + ")"});
+
+
+        var smartScale = Math.max(Math.min(contentScale, 1), 0.75);
+        $("#iframe_buttons_panel").css({transform: "scale(" + smartScale + ")"});
+    }
+
+    draw();
+</script>
+
+<iframe id="adsBackground" src="adbackground.html" style="display: none !important;">
+</iframe>
+<div id="adsContainer"></div>
+
+<div id="ads_video_title">
+    <img name="image" src="img/vip_icon2.png">
+    <div name="label" class="label">Buy VIP and use extra life without ads.
+    </div>
+</div>
+
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript">
+    Data.prefix = platform == "web" ? null : platform;
+</script>
+<script type="text/javascript" src="js/track/tracker.js"></script>
+<script type="text/javascript" src="js/track/pixel_tracker.js"></script>
+<script type="text/javascript" src="js/track/ga_tracker.js"></script>
+<script type="text/javascript" src="js/localization.js"></script>
+<script type="text/javascript" src="js/ads/ads_banner.js"></script>
+<script type="text/javascript" src="js/ads/ads.js"></script>
+<script type="text/javascript" src="js/news.js"></script>
+<script type="text/javascript" id="">(function(d,b,a){(b[a]=b[a]||[]).push(function(){try{b.yaCounter48411593=new Ya.Metrika({id:48411593,clickmap:!0,trackLinks:!0,accurateTrackBounce:!0})}catch(f){}});var e=d.getElementsByTagName("script")[0],c=d.createElement("script");a=function(){e.parentNode.insertBefore(c,e)};c.type="text/javascript";c.async=!0;c.src="https://mc.yandex.ru/metrika/watch.js";"[object Opera]"==b.opera?d.addEventListener("DOMContentLoaded",a,!1):a()})(document,window,"yandex_metrika_callbacks");</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/48411593" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+
+<script type="text/javascript" src="js/UnityLoader.js"></script>
+<script type="text/javascript" id="">var elem=document.createElement("script");elem.src="https://quantcast.mgr.consensu.org/cmp.js";elem.async=!0;elem.type="text/javascript";var scpt=document.getElementsByTagName("script")[0];scpt.parentNode.insertBefore(elem,scpt);
+(function(){function e(){if(!window.frames.__cmpLocator)if(document.body){var b=document.body,a=document.createElement("iframe");a.style="display:none";a.name="__cmpLocator";b.appendChild(a)}else setTimeout(e,5)}function c(b){var a="string"===typeof b.data;var c=a?-1!=b.data.indexOf("__cmpCall")?JSON.parse(b.data):{}:b.data;if(c.__cmpCall){var f=c.__cmpCall;window.__cmp(f.command,f.parameter,function(c,e){var d={__cmpReturn:{returnValue:c,success:e,callId:f.callId}};b.source.postMessage(a?JSON.stringify(d):
+d,"*")})}}var d=!0;e();window.__cmp=function(b){var a=arguments;if(a.length)if("ping"===a[0])a[2]({gdprAppliesGlobally:d,cmpLoaded:!1},!0);else{if("__cmp"==b)return!1;"undefined"===typeof __cmp.a&&(__cmp.a=[]);__cmp.a.push([].slice.apply(a))}else return __cmp.a};window.__cmp.gdprAppliesGlobally=d;window.__cmp.msgHandler=c;window.addEventListener?window.addEventListener("message",c,!1):window.attachEvent("onmessage",c)})();
+window.__cmp("init",{Language:"en","Initial Screen Reject Button Text":"I do not accept","Initial Screen Accept Button Text":"I accept","Purpose Screen Header Title Text":"Privacy settings","Purpose Screen Body Text":"You can set your consent preferences and determine how you want your data to be used based on the purposes below. You may set your preferences for us independently from those of third-party partners. Each purpose has a description so that you know how we and partners use your data.",
+"Vendor Screen Body Text":"You can set consent preferences for each individual third-party company below. Expand each company list item to see what purposes they use data for to help make your choices. In some cases, companies may disclose that they use your data without asking for your consent, based on their legitimate interests. You can click on their privacy policies for more information and to opt out.","Vendor Screen Accept All Button Text":"Accept all","Vendor Screen Reject All Button Text":"Reject all",
+"Initial Screen Body Text":"We and our partners use technology such as cookies on our site to personalise content and ads, provide social media features, and analyse our traffic. Click below to consent to the use of this technology across the web. You can change your mind and change your consent choices at anytime by returning to this site.","Initial Screen Body Text Option":1,"Publisher Name":"Enthusiast Gaming","Publisher Purpose IDs":[2,3,4,5,1],"UI Layout":"banner","Display UI":"inEU"});</script><iframe name="__cmpLocator" style="display: none;"></iframe>
+
+    <style>
+        .qc-cmp-button {
+          background-color: #8ABECC !important;
+          border-color: #8ABECC !important;
+        }
+        .qc-cmp-button:hover {
+          background-color: transparent !important;
+          border-color: #8ABECC !important;
+        }
+        .qc-cmp-alt-action,
+        .qc-cmp-link {
+          color: #8ABECC !important;
+        }
+        .qc-cmp-button {
+          color: #FFFFFF !important;
+        }
+        .qc-cmp-button.qc-cmp-secondary-button {
+          color: #FFFFFF !important;
+        }
+        .qc-cmp-button.qc-cmp-button.qc-cmp-secondary-button:hover {
+          color:#ffffff !important;
+        }
+        .qc-cmp-button.qc-cmp-secondary-button {
+          border-color: #2B3B40 !important;
+          background-color: transparent !important;
+        }
+        .qc-cmp-button.qc-cmp-secondary-button:hover {
+          background-color: #2B3B40 !important;
+        }
+        .qc-cmp-ui,
+        .qc-cmp-ui .qc-cmp-main-messaging,
+        .qc-cmp-ui .qc-cmp-messaging,
+        .qc-cmp-ui .qc-cmp-beta-messaging,
+        .qc-cmp-ui .qc-cmp-title,
+        .qc-cmp-ui .qc-cmp-sub-title,
+        .qc-cmp-ui .qc-cmp-purpose-info,
+        .qc-cmp-ui .qc-cmp-table,
+        .qc-cmp-ui .qc-cmp-table-header,
+        .qc-cmp-ui .qc-cmp-vendor-list,
+        .qc-cmp-ui .qc-cmp-vendor-list-title {
+            color: #FFFFFF !important;
+        }
+        .qc-cmp-ui a,
+        .qc-cmp-ui .qc-cmp-alt-action {
+          color: #749FAB !important;
+        }
+        .qc-cmp-ui {
+            background-color: #56767F !important;
+        }
+        .qc-cmp-publisher-purposes-table .qc-cmp-table-header {
+          background-color: #fafafa !important;
+        }
+        .qc-cmp-publisher-purposes-table .qc-cmp-table-row {
+          background-color: #ffffff !important;
+        }
+        .qc-cmp-small-toggle.qc-cmp-toggle-on,
+        .qc-cmp-toggle.qc-cmp-toggle-on {
+            background-color: #8ABECC !important;
+            border-color: #8ABECC !important;
+        }
+    </style>
+<script type="text/javascript" id="">var _comscore=_comscore||[];_comscore.push({c1:"2",c2:"22419751"});(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src=("https:"==document.location.protocol?"https://sb":"http://b")+".scorecardresearch.com/beacon.js";b.parentNode.insertBefore(a,b)})();</script>
+<noscript>
+  <img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=22419751&amp;cv=2.0&amp;cj=1">
+</noscript>
+
+<script type="text/javascript" src="js/UnityBridge.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/tween/TimelineMax.min.js"></script>
+<script type="text/javascript" src="js/tween/TweenLite.min.js"></script>
+<script type="text/javascript" src="js/tween/CSSPlugin.min.js"></script>
+<script type="text/javascript" src="js/tween/EasePack.min.js"></script>
+
+<script>
+    //dirty huck to avoid alerting errors while page loading
+    //Module.errorhandler not working properly for these errors
+    UnityLoader.Error.didShowErrorMessage = true;
+    var unityErrorHandler = UnityLoader.Error.handler;
+    UnityLoader.Error.handler = function (e, Module) {
+        //got from UnityLoader.Error.handler
+        var message = Module ? this.demangle(e, Module) : e.message;
+        var message = "An error occurred running the Unity content on this page. See your browser JavaScript console for more info. The error was:\n" + message;
+        if (message.indexOf("DISABLE_EXCEPTION_CATCHING") != -1) {
+            message = "An exception has occurred, but exception handling has been disabled in this build. If you are the developer of this content, enable exceptions in your project WebGL player settings to be able to catch the exception or see the stack trace.";
+        } else if (message.indexOf("Cannot enlarge memory arrays") != -1) {
+            message = "Out of memory. If you are the developer of this content, try allocating more memory to your WebGL build in the WebGL player settings.";
+        } else if (message.indexOf("Invalid array buffer length") != -1 || message.indexOf("Invalid typed array length") != -1 || message.indexOf("out of memory") != -1 || message.indexOf("could not allocate memory") != -1) {
+            message = "The browser could not allocate enough memory for the WebGL content. If you are the developer of this content, try allocating less memory to your WebGL build in the WebGL player settings.";
+        }
+
+        console.log("Invoking error handler due to\n" + message);
+        //unityErrorHandler(e, Module);
+    }
+
+    switch (platform) {
+        case "fb":
+            APP.embedScript("js/social_bar.js", 'arjs');
+            APP.embedScript("js/fb.js", 'mainjs');
+            break;
+        case "web":
+            var tld = window.location.host;
+            tld = tld.substring(tld.lastIndexOf(".") + 1);
+            APP.embedScript("js/web.js", 'mainjs');
+            break;
+        case "vk":
+            APP.embedScript("js/social_bar.js", 'arjs');
+            APP.embedScript("js/vk.js", 'mainjs');
+            break;
+    }
+</script>
+
+<script type="text/javascript">
+    //-------------------------------------------------------------------//
+    //
+    //						START SCREEN
+    //
+    //-------------------------------------------------------------------//
+
+    function onPlayMouseOver(button, over) {
+        var glowDots1 = $("#gamePanel").children("img[name=glowDots1]");
+        var glowDots2 = $("#gamePanel").children("img[name=glowDots2]");
+        if (over) {
+            glowDots1.show();
+            glowDots2.show();
+        } else {
+            glowDots1.hide();
+            glowDots2.hide();
+        }
+    }
+
+    //-------------------------------------------------------------------//
+    //
+    //							Forgot
+    //
+    // -------------------------------------------------------------------//
+    function updateForgotInputsState() {
+        var passInput = $("#forgotPassword");
+        var pass = passInput.val();
+        var repassInput = $("#forgotRePassword");
+        var reass = repassInput.val();
+        if (pass == reass && pass.length > 0) {
+            passInput.removeClass("active");
+            repassInput.removeClass("active");
+        } else {
+            passInput.addClass("active");
+            repassInput.addClass("active");
+        }
+        var forgotLabelError = $("#forgotLabelError");
+        forgotLabelError.hide();
+    }
+
+    function onForgotSendClick(button) {
+        var passInput = $("#forgotPassword");
+        var pass = passInput.val();
+        var repassInput = $("#forgotRePassword");
+        var reass = repassInput.val();
+        if (pass == reass && pass.length > 0) {
+            passInput.removeClass("active");
+            repassInput.removeClass("active");
+        } else {
+            passInput.addClass("active");
+            repassInput.addClass("active");
+            var forgotLabelError = $("#forgotLabelError");
+            forgotLabelError.show();
+            return;
+        }
+
+        var token = APP._urlParams.token;
+        var passHash = sha256.hex(pass);
+        APP.startGame(null, {
+            type: APP.LOGIN_TYPE_CHANGE_PASSWORD,
+            platform: APP._platform,
+            token: token,
+            password: passHash
+        });
+    }
+
+    //-------------------------------------------------------------------//
+    //
+    //						NEWS
+    //
+    //-------------------------------------------------------------------//
+
+    document.addEventListener("newsClick", function () {
+        var $newsFrame = $("#button_news_frame");
+        if ($newsFrame.hasClass("buttons_news_active")) {
+            $newsFrame.removeClass("buttons_news_active");
+            $newsFrame[0].contentWindow.open(false);
+        } else {
+            $newsFrame.addClass("buttons_news_active");
+            $newsFrame[0].contentWindow.open(true);
+        }
+    });
+
+    document.addEventListener("click", function () {
+        var $newsFrame = $("#button_news_frame");
+        if ($newsFrame.hasClass("buttons_news_active")) {
+            $newsFrame.removeClass("buttons_news_active");
+            $newsFrame[0].contentWindow.open(false);
+        }
+    });
+
+
+    //-------------------------------------------------------------------//
+    //
+    //						ADVICE
+    //
+    //-------------------------------------------------------------------//
+
+    function playAdvices() {
+        var advice = $("#advice");
+        var tl = new TimelineMax({repeat: -1, repeatDelay: 1, delay: 1});
+        tl.call(function () {
+            advice.text(getAdvice());
+        });
+        tl.append(TweenLite.from(advice, 0.75, {
+            alpha: 0,
+            top: "550px",
+            ease: "Elastic.easeOut"
+        }));
+        tl.append(TweenLite.to(advice, 0.25, {
+            alpha: 0,
+            top: "650px"
+        }), 13.25);
+    }
+
+    function getAdvice() {
+        var index = Math.floor(Math.random() * advicesCount);
+        if (index == currentAdviceIndex) {
+            if (currentAdviceIndex > 0) {
+                index = 0;
+            } else {
+                index = currentAdviceIndex + 1;
+            }
+        }
+        currentAdviceIndex = index;
+        return Localization.getString("advice" + index);
+    }
+
+    playAdvices();
+    var currentAdviceIndex = -1;
+    var advicesCount = 13;
+
+    //-------------------------------------------------------------------//
+    //
+    //						Other
+    //
+    //-------------------------------------------------------------------//
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="display: none; visibility: hidden;"><script type="text/javascript" src="https://cdn.enthusiast.gg/script/prebid1.js" async="null"></script></div><script src="blob:https://littlebigsnake.com/d450c933-923f-4cf5-b41b-f2a1ba4f5379" id="e6bd1a83dcc535af071c67ece1bc42f3"></script></body></html>

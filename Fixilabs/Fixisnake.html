@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fixisnake.io</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="gamebd">
+    <p>Your browser doesn't support canvas. Boo hoo!</p>
+    </canvas>
+    <script id="skinJs" src="skins.js"></script>
+    <script id="draw" src="draw.js"></script>
+    <script>
+      const canvas = document.querySelector('.gamebd');
+      const width = canvas.width = window.innerWidth;
+      const height = canvas.height = window.innerHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.translate(width/2, height/2);
+      function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+      };
+
+      function rand(min, max) {
+        return Math.floor(Math.random() * (max-min+1)) + (min);
+      }
+      document.addEventListener("keydown", keyDownHandler, false);
+      document.addEventListener("keyup", keyUpHandler, false);
+      var rightPressed = false;
+      var downPressed = false;
+      var upPressed = false;
+      var leftPressed = false;
+
+      function keyDownHandler(e) {
+        if(e.key == "Right" || e.key == "ArrowRight") {
+          rightPressed = true;
+        }
+        if(e.key == "up" || e.key == "ArrowUp") {
+          upPressed = true;
+        }
+        if(e.key == "down" || e.key == "ArrowDown") {
+          downPressed = true;
+        }
+        else if(e.key == "Left" || e.key == "ArrowLeft") {
+          leftPressed = true;
+        }
+      }
+
+      function keyUpHandler(e) {
+        if(e.key == "Right" || e.key == "ArrowRight") {
+            rightPressed = false;
+        }
+        if(e.key == "up" || e.key == "ArrowUp") {
+          upPressed = false;
+        }
+        if(e.key == "down" || e.key == "ArrowDown") {
+          downPressed = false;
+        }
+        else if(e.key == "Left" || e.key == "ArrowLeft") {
+            leftPressed = false;
+        }
+      }
+      var x = 0;
+      var y = 0;
+      var r = 20;
+      var ex = x-r;
+      var ey = y-r;
+      var ex2 = x - r;
+      var ey2 = y+r;
+      var PlaySkin = 1;
+      var d = "up";
+      function drawPlayer(skin) {
+        if (skin === 1) {
+          normalSkin(x,y,r,ex,ey,ex2,ey2);
+        } else if (skin === 2) {
+          eggSkin(x,y,r,d)
+        }
+      }
+      draw()
+    </script>
+  </body>
+</html>
