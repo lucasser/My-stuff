@@ -1,4 +1,4 @@
-// Package p contains an HTTP Cloud Function.
+/*// Package p contains an HTTP Cloud Function.
 package p
 
 import (
@@ -190,3 +190,4 @@ func lcm(n, m uint) uint {
 		return n * m / gcd(n, m)
 	}
 }
+*/

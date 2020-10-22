@@ -14,9 +14,6 @@ func main() {
 	if cmd == "cmd" {
 		mainCmd()
 	}
-	if cmd == "web" {
-		mainServer()
-	}
 	if cmd == "fact" {
 		mainFactor()
 	}
@@ -26,9 +23,6 @@ func main() {
 		fmt.Print("wrong command\n")
 		fmt.Println("enter 'code.exe lucas'")
 	}
-}
-func mainClass() {
-
 }
 func computePrep(a, b uint, o string) (string, error) {
 	if o == "!" {
@@ -66,11 +60,11 @@ func mainCmd() {
 		var o string
 		var a, b uint
 
-		fmt.Printf("Enter an interger: ")
+		fmt.Printf("Enter an integer: ")
 		fmt.Scanf("%d\n", &a)
 		fmt.Printf("Oh, I got %d\n", a)
 
-		fmt.Printf("Enter another interger: ")
+		fmt.Printf("Enter another integer: ")
 		fmt.Scanf("%d\n", &b)
 		fmt.Printf("Now I got %d\n", b)
 
@@ -98,7 +92,7 @@ func mainFactor() {
 	//numCPU = 2
 	for {
 		var a uint
-		fmt.Printf("Enter an interger to factor: ")
+		fmt.Printf("Enter an integer to factor: ")
 		fmt.Scanf("%d\n", &a)
 		fmt.Printf("Enter number of CPUs to use: ")
 		fmt.Scanf("%d\n", &numCPU)
