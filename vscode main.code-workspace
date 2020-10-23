@@ -2,12 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "..\\..\\..\\fixilabs"
-		},
-		{
-			"path": "..\\..\\..\\go\\src\\bookstore"
 		}
 	]
 }

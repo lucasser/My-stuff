@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>calculator</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      h1 {
+        text-align: center;
+        top: 0px;
+        margin-bottom: -10px;
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">The Engish army advancing.</h1>
+    <canvas class="gamebd">
+    <p>Your browser doesn't support canvas. Boo hoo!</p>
+    </canvas>
+    <script>
+      const canvas = document.querySelector('.gamebd');
+      const width = canvas.width = window.innerWidth;
+      const height = canvas.height = window.innerHeight+20;
+      const ctx = canvas.getContext('2d');
+      ctx.translate(width/2, height/2);
+      function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+      };
+
+      function rand(min, max) {
+        return Math.floor(Math.random() * (max-min+1)) + (min);
+      }
+
+      function drawBackground () {
+        //sky
+        ctx.fillStyle = 'rgb(19, 193, 232)';
+        ctx.fillRect(-width, -height/3-120, 2*width, 2*height);
+        //green rect(grass)
+        ctx.fillStyle = 'rgb(0, 255, 0)';
+        ctx.fillRect(-width, 4*(height/2)/5-20, 2*width, 5*height);
+      }
+      let image = new Image();
+      image.src = 'walk-right.png';
+      image.onload = draw;
+
+      let sprite = 2;
+      let posX = 0;
+
+      function draw() {
+        drawBackground();
+        //general
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+        ctx.fillRect(posX+70, 0, 5, height/2-140);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, 0+posX, 150, 102, 148);
+        //archers
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*1+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*2+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*3+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*4 +posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*5 +posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*6 +posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*7+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*8+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*9+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*10+posX, 150, 102, 148);
+        //foot soldiers
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*11+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*12+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*13+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*14+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*15+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*16+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*17+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*18+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*19+posX, 150, 102, 148);
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, -120*20+posX, 150, 102, 148);
+        if (posX % 13 === 0) {
+          if (sprite === 5) {
+            sprite = 0;
+          } else {
+            sprite ++;
+          }
+        }
+        if(posX > 2*width) {
+          newStartPos = -(width/2);
+          posX = Math.ceil(newStartPos / 13) * 13;
+        } else {
+          posX += 2;
+        }
+        window.requestAnimationFrame(draw);
+      };
+    </script>
+  </body>
+</html>

@@ -1,4 +1,8 @@
-function normalSkin(x,y,r,ex,ey,ex2,ey2) {
+function normalSkin(x,y,r) {
+  var ex = x-r;
+  var ey = y-r;
+  var ex2 = x - r;
+  var ey2 = y+r;
   ctx.fillStyle = 'rgb(0, 0, 255)';
   ctx.beginPath();
   ctx.arc(x, y, r, degToRad(0), degToRad(360), false);

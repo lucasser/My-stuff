@@ -1,5 +1,6 @@
 function draw() {
   drawBackground();
+  drawMap(map);
   drawPlayer(PlaySkin);
   if (downPressed) {
     y+=2;
