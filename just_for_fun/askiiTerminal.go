@@ -3,11 +3,13 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"strings"
 )
 
 func main() {
+	basedir := "askii\\"
 	for {
 		var a string
 		fmt.Printf("enter command:")
@@ -25,14 +27,17 @@ func main() {
 		// https://golang.org/pkg/bufio/#Scanner.Scan
 		//analizing input
 		if a == "list" {
-			ba, _ := readFile("askiicodes.txt")
-			fmt.Printf("The available commands are\n%s\n", ba)
-		} else {
-
+			fmt.Println("The available commands are:")
 			for scanner.Scan() {
-				if strings.Contains(scanner.Text(), a) {
+				split := strings.Split(scanner.Text(), "|")
+				fmt.Printf("%s\n", split[0])
+			}
+		} else {
+			for scanner.Scan() {
+				split := strings.Split(scanner.Text(), "|")
+				if split[0] == a {
+					print(basedir, split[1])
 					x++
-					fmt.Printf("%d\n", line)
 				}
 
 				line++
@@ -45,4 +50,13 @@ func main() {
 			}
 		}
 	}
+}
+
+func print(basedir string, link string) {
+	ascii, err := ioutil.ReadFile(basedir + link)
+	if err != nil {
+		fmt.Printf("sorry file not found,\n err = %s\n", err)
+		return
+	}
+	fmt.Println(string(ascii))
 }
