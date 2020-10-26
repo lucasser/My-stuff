@@ -1,0 +1,5 @@
+gopher|gopher.txt
+train|train.txt
+minifig|fixik.txt
+calvin|calvin.txt
+cat|cat.txt
