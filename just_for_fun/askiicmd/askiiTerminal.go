@@ -9,14 +9,17 @@ import (
 )
 
 func main() {
-	basedir := "askii\\"
+	basedir := "C:\\Users\\Lucas\\my_stuff\\code\\just_for_fun\\askiicmd\\"
 	for {
 		var a string
 		fmt.Printf("enter command:")
 		fmt.Scanf("%s\n", &a)
 		fmt.Printf("Ok printing %s\n", a)
 
-		f, _ := os.Open("askiicodes.txt")
+		f, err := os.Open(basedir + "askiicodes.txt")
+		if err != nil {
+			fmt.Println(err)
+		}
 		defer f.Close()
 
 		// Splits on newlines by default.
@@ -53,7 +56,7 @@ func main() {
 }
 
 func print(basedir string, link string) {
-	ascii, err := ioutil.ReadFile(basedir + link)
+	ascii, err := ioutil.ReadFile(basedir + "askii\\" + link)
 	if err != nil {
 		fmt.Printf("sorry file not found,\n err = %s\n", err)
 		return

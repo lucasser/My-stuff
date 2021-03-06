@@ -13,10 +13,10 @@ func main() {
 	// TODO: read cmd argument
 	cmd := os.Args[1]
 	// call main_cmd() or
-	if cmd == "cmd" {
+	if cmd == "calculate" {
 		mainCmd()
 	}
-	if cmd == "fact" {
+	if cmd == "factorize" {
 		mainFactor()
 	}
 	if cmd == "lucas" {
