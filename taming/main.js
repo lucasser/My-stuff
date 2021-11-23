@@ -1,3 +1,7 @@
+let image = new Image();
+image.src = 'walk-right.png';
+image.onload = draw;
+
 function draw() {
     var xVect = 0;
     var yVect = 0;
@@ -16,7 +20,9 @@ function draw() {
     if (leftPressed) {
         xVect = -10;
     }
-    if (player)
+    if (playerX) {
+        ctx.drawImage(image, (sprite*102), 0, 102, 148, 0+posX, 150, 102, 148);
+    }
     window.requestAnimationFrame(draw);
   };
   

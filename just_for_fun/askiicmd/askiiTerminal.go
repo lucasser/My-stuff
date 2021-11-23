@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	basedir := "C:\\Users\\Lucas\\my_stuff\\code\\just_for_fun\\askiicmd\\"
+	basedir := "C:\\Users\\lucse\\my_stuff\\code\\just_for_fun\\askiicmd\\"
 	for {
 		var a string
 		fmt.Printf("enter command:")

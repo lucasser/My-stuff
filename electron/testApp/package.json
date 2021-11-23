@@ -1,0 +1,14 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "me",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.3.0"
+  }
+}

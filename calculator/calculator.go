@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	asciiGopher, _ := ioutil.ReadFile("..\\just_for_fun\\askii\\ascii_gopher.txt")
+	asciiGopher, _ := ioutil.ReadFile("..\\just_for_fun\\askiicmd\\askii\\gopher.txt")
 	// TODO: read cmd argument
 	cmd := os.Args[1]
 	// call main_cmd() or
@@ -20,7 +20,7 @@ func main() {
 		mainFactor()
 	}
 	if cmd == "lucas" {
-		println("panic: runtime error: index out of range [1] with length 1\n\ngoroutine 1 [running]:\nmain.main()\n\t\aC:/Users/Marianna/Dropbox/Lucas/code/calculator.go:11 +0x1ba\n\n")
+		println("panic: runtime error: index out of range [1] with length 1\n\ngoroutine 1 [running]:\nmain.main()\n\t\aC:/Users/lucse/my_stuff/code/calculator.go:11 +0x1ba\n\n")
 	} else {
 		fmt.Print("The Gopher Is Confused:\n")
 		fmt.Println(string(asciiGopher))
@@ -123,3 +123,5 @@ func timeIt(f func()) time.Duration {
 	dur := end.Sub(start)
 	return dur
 }
+
+//haha
