@@ -58,15 +58,14 @@ function component(width, height, color, x, y) {
         this.y += this.speedY;
     }
 }
-rect(20,20,200,200)
 function updateGameArea() {
     myGameArea.clear();
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
-    if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.speedX = -1; }
-    if (myGameArea.keys && myGameArea.keys[39]) {myGamePiece.speedX = 1; }
-    if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -1; }
-    if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speedY = 1; }
+    if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.speedX = -10; }
+    if (myGameArea.keys && myGameArea.keys[39]) {myGamePiece.speedX = 10; }
+    if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -10; }
+    if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speedY = 10; }
     myGamePiece.newPos();
     myGamePiece.update();
 }
