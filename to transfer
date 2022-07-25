@@ -1,0 +1,111 @@
+index.js
+const express = require("express");
+const { createServer } = require("http");
+const { Server } = require("socket.io");
+
+const app = express();
+const server = createServer(app);
+const io = new Server(server, { /* options */ });
+let users = [];
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+io.on("connection", (socket) => {
+    console.log('A user connected: ' + socket.id);
+    var data = {};
+    data.id = socket.id;
+    users.push(data);
+    socket.emit("users", users);
+    socket.broadcast.emit("users", users);
+
+    socket.on("name", (arg) => {
+        var index = users.findIndex(user => user.id == socket.id);
+        users[index].name = arg;
+        socket.emit("users", users);
+        socket.emit("id", socket.id);
+        socket.broadcast.emit("users", users);
+    });
+
+    socket.on('disconnect', function () {
+        console.log('A user disconnected: ' + socket.id);
+        users = users.filter(user => user.id !== socket.id);
+        socket.emit("users", users);
+        socket.broadcast.emit("users", users);
+    });
+});
+
+server.listen(3000, () => {
+    console.log('listening on *:3000');
+});
+
+
+
+
+index.html:
+<h1>Hello World</h1>
+<form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+</form>
+<button onclick="send()">Submit</button>
+<h4 style="color: red;">Users:</h4>
+<h5 id="users"></h5>
+<h5 id="you"></h5>
+<script src="/socket.io/socket.io.js"></script>
+<script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+<script>
+    socket = io();
+    function send() {
+        console.log(document.getElementById("name").value)
+        socket.emit("name", document.getElementById("name").value);
+    }
+    socket.on("users", function(data){
+        var players[] = JSON.stringify(data);
+        document.getElementById("users").innerHTML = players;
+    })
+    socket.on("id", function(data){
+        document.getElementById("you").innerHTML = "You are: " + data;
+    })
+
+    //phaser
+    var config = {
+        type: Phaser.AUTO,
+        width: 500,
+        height: 500,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                debug: false
+            }
+        },
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
+    //phaser game
+    var game = new Phaser.Game(config);
+    function preload () {
+        
+    }
+
+    function create () {
+        var r1 = this.add.circle(250, 250, 200, 0x6666ff);
+        //find keyboard
+        key = this.input.keyboard.createCursorKeys();
+        //rotate copter
+        input = this.input;
+        
+    }
+
+    function update () {
+        if (players.length > throwers.length) {
+            for (var x = throwers.length - 1; x < players.length-1; x++) {
+                throwers.push(this.add.circle(0,0,20,0x6666ff));
+            }
+        }
+    }
+</script>
